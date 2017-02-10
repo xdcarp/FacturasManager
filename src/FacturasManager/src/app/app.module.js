@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var common_1 = require('@angular/common');
 var material_1 = require('@angular/material');
 var app_component_1 = require('./app.component');
+var menu_service_1 = require('./_services/menu.service');
 var mainNavBar_component_1 = require('./mainNavBar/mainNavBar.component');
 var sidebarNav_component_1 = require('./sidebarNav/sidebarNav.component');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
@@ -34,7 +35,7 @@ var AppModule = (function () {
                 dashboard_component_1.Dashboard,
                 footerNav_component_1.FooterNav
             ],
-            providers: [],
+            providers: [menu_service_1.MenuesService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

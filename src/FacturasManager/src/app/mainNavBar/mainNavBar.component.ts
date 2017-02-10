@@ -1,5 +1,7 @@
 ﻿import { Component, OnInit, trigger, state, transition, animate, style } from '@angular/core';
 
+import { MenuesService } from '../_services/menu.service';
+
 @Component({
     selector: 'mainnavbar',
     template: require('./mainNavBar.component.html'),
@@ -19,15 +21,23 @@
 export class MainNavBar implements OnInit {
     
     menuState: string;
+    public menuPrincipalOpts;
+    public menuCrudOpts;
+    public menuPlanOpts;
+    public opcionesDeSubMenu;
 
-    constructor() { }
+    constructor(private menuService: MenuesService) { 
+        this.menuPrincipalOpts = this.menuService.getOpcionesMenuPrincipal();
+    }
 
     ngOnInit() {
         this.menuState = 'in';        
     }
 
-    toggleMenu() {
-        // 1-line if statement that toggles the value:
+    opciones: string[];
+
+    toggleMenu(itemSeleccionado) {
+        this.opciones = itemSeleccionado.opciones;
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }
 }

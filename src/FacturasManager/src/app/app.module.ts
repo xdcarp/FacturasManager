@@ -5,6 +5,8 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 
+import { MenuesService } from './_services/menu.service';
+
 import { MainNavBar } from './mainNavBar/mainNavBar.component';
 import { SidebarNav } from './sidebarNav/sidebarNav.component';
 import { Dashboard } from './dashboard/dashboard.component';
@@ -34,7 +36,7 @@ import { FooterNav } from './footerNav/footerNav.component';
         GtUsuarioinfoComponent,
         GtRouteSecuredDirective*/
     ],
-    providers: [],
+    providers: [MenuesService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

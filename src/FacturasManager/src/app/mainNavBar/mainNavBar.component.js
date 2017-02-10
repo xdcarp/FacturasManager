@@ -9,11 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var menu_service_1 = require('../_services/menu.service');
 var MainNavBar = (function () {
-    function MainNavBar() {
-        this.menuState = 'out';
+    function MainNavBar(menuService) {
+        this.menuService = menuService;
+        this.menuPrincipalOpts = this.menuService.getOpcionesMenuPrincipal();
+        this.menuCrudOpts = this.menuService.getOpcionesMenuCrud();
+        this.menuPlanOpts = this.menuService.getOpcionesMenuPlan();
     }
-    MainNavBar.prototype.ngOnInit = function () { };
+    MainNavBar.prototype.ngOnInit = function () {
+        this.menuState = 'in';
+    };
     MainNavBar.prototype.toggleMenu = function () {
         // 1-line if statement that toggles the value:
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
@@ -35,7 +41,7 @@ var MainNavBar = (function () {
                 ]),
             ]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [menu_service_1.MenuesService])
     ], MainNavBar);
     return MainNavBar;
 }());
