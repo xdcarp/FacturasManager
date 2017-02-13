@@ -16,12 +16,6 @@ var MenuesService = (function () {
     MenuesService.prototype.getOpcionesMenuPrincipal = function () {
         return OpcionesMenu.MenuPrincipal.MenuPrincipalOpts;
     };
-    MenuesService.prototype.getOpcionesMenuCrud = function () {
-        return OpcionesMenu.MenuSecundarioCRUD;
-    };
-    MenuesService.prototype.getOpcionesMenuPlan = function () {
-        return OpcionesMenu.MenuSecundarioLista;
-    };
     MenuesService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [])

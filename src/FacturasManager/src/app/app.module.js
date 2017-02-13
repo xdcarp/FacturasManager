@@ -14,6 +14,7 @@ var common_1 = require('@angular/common');
 var material_1 = require('@angular/material');
 var app_component_1 = require('./app.component');
 var menu_service_1 = require('./_services/menu.service');
+var clickAfuera_directive_1 = require('./_directives/clickAfuera.directive');
 var mainNavBar_component_1 = require('./mainNavBar/mainNavBar.component');
 var sidebarNav_component_1 = require('./sidebarNav/sidebarNav.component');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
@@ -33,7 +34,8 @@ var AppModule = (function () {
                 mainNavBar_component_1.MainNavBar,
                 sidebarNav_component_1.SidebarNav,
                 dashboard_component_1.Dashboard,
-                footerNav_component_1.FooterNav
+                footerNav_component_1.FooterNav,
+                clickAfuera_directive_1.ClickAfueraDirective
             ],
             providers: [menu_service_1.MenuesService],
             bootstrap: [app_component_1.AppComponent]

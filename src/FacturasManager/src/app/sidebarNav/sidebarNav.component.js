@@ -13,30 +13,19 @@ var menu_service_1 = require('../_services/menu.service');
 var SidebarNav = (function () {
     function SidebarNav(menuService) {
         this.menuService = menuService;
-        this.menuAMostrar = this.menuService.getOpcionesMenuCrud();
-        // if (!this.menuAMostrar || this.idMenuSeleccionado == 1) {
-        //     this.menuAMostrar = this.menuService.getOpcionesMenuCrud();
-        // }
-        // else {
-        //     this.menuAMostrar = this.menuService.getOpcionesMenuPlan();
-        //  }        
     }
-    SidebarNav.prototype.ngOnChanges = function (changes) {
-        for (var propName in changes) {
-            var chng = changes[propName];
-            var valorActual = JSON.stringify(chng.currentValue);
-            if (valorActual == '1') {
-                this.menuAMostrar = this.menuService.getOpcionesMenuCrud();
-            }
-            else {
-                this.menuAMostrar = this.menuService.getOpcionesMenuPlan();
-            }
+    SidebarNav.prototype.setOpcionSeleccionada = function (nuevoValor) {
+        if (this.esLaOpcionActiva === nuevoValor) {
+            this.esLaOpcionActiva = 0;
+        }
+        else {
+            this.esLaOpcionActiva = nuevoValor;
         }
     };
     __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Object)
-    ], SidebarNav.prototype, "idMenuSeleccionado", void 0);
+        core_1.Input('opciones'), 
+        __metadata('design:type', Array)
+    ], SidebarNav.prototype, "opciones", void 0);
     SidebarNav = __decorate([
         core_1.Component({
             selector: 'sidebarNav',

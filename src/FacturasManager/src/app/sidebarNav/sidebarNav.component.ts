@@ -9,12 +9,17 @@ import { MenuesService } from '../_services/menu.service';
 export class SidebarNav  {   
     @Input('opciones')
     opciones: string[];
-    esLaOpcionActiva: boolean = false;
+    esLaOpcionActiva: number;
     
     constructor(private menuService: MenuesService) {
     }   
     
-    setOpcionSeleccionada() { 
-        this.esLaOpcionActiva = true;
+    setOpcionSeleccionada(nuevoValor: number) { 
+        if(this.esLaOpcionActiva === nuevoValor){
+            this.esLaOpcionActiva = 0;
+        }
+        else{
+            this.esLaOpcionActiva = nuevoValor;
+        }
     }
 }

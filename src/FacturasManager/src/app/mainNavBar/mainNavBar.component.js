@@ -14,15 +14,16 @@ var MainNavBar = (function () {
     function MainNavBar(menuService) {
         this.menuService = menuService;
         this.menuPrincipalOpts = this.menuService.getOpcionesMenuPrincipal();
-        this.menuCrudOpts = this.menuService.getOpcionesMenuCrud();
-        this.menuPlanOpts = this.menuService.getOpcionesMenuPlan();
     }
     MainNavBar.prototype.ngOnInit = function () {
         this.menuState = 'in';
     };
-    MainNavBar.prototype.toggleMenu = function () {
-        // 1-line if statement that toggles the value:
+    MainNavBar.prototype.toggleMenu = function (itemSeleccionado) {
+        this.opciones = itemSeleccionado.opciones;
         this.menuState = this.menuState === 'out' ? 'in' : 'out';
+    };
+    MainNavBar.prototype.esconderBarra = function () {
+        this.menuState = 'out';
     };
     MainNavBar = __decorate([
         core_1.Component({

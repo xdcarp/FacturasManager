@@ -38,6 +38,18 @@ export class MainNavBar implements OnInit {
 
     toggleMenu(itemSeleccionado) {
         this.opciones = itemSeleccionado.opciones;
-        this.menuState = this.menuState === 'out' ? 'in' : 'out';
+        //this.menuState = this.menuState === 'out' ? 'in' : 'out';
     }
+
+    esconderBarra(event) {
+        if (this.menuPrincipalOpts.find(opcion => opcion.name == event.innerText) ||
+        this.opciones.find(opt => opt == event.innerText)){
+        //if (event.innerText == 'Personas' || event.innerText == 'ODD (Objetos de Deseo)' || event.innerText == 'Plan') {
+            this.menuState = 'out';
+        }
+        else {
+            this.menuState = 'in';
+         }
+            
+     }
 }
