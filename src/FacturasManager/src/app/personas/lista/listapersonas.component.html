@@ -1,0 +1,16 @@
+<table class="table table-striped">
+  <thead class="thead-inverse">
+    <tr>
+      <th>Nombre y Apellido</th>
+      <th>Telefono</th>
+      <th>Trae Facturas</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let persona of listaPersonas">        
+      <td>{{persona.nombreyapellido}}</td>
+      <td>{{persona.telefono}}</td>
+      <td>{{persona.traeODD ? 'Sí' : 'No'}}</td>
+    </tr>    
+  </tbody>
+</table>

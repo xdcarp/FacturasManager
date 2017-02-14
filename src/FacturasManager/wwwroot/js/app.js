@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "74f4a49575c4f54569ac"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "87cddad526c6e2f35d2a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -18420,12 +18420,10 @@ var MainNavBar = (function () {
     };
     MainNavBar.prototype.toggleMenu = function (itemSeleccionado) {
         this.opciones = itemSeleccionado.opciones;
-        //this.menuState = this.menuState === 'out' ? 'in' : 'out';
     };
     MainNavBar.prototype.esconderBarra = function (event) {
         if (this.menuPrincipalOpts.find(function (opcion) { return opcion.name == event.innerText; }) ||
             this.opciones.find(function (opt) { return opt == event.innerText; })) {
-            //if (event.innerText == 'Personas' || event.innerText == 'ODD (Objetos de Deseo)' || event.innerText == 'Plan') {
             this.menuState = 'out';
         }
         else {
