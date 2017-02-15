@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var common_1 = require('@angular/common');
 var material_1 = require('@angular/material');
 var app_component_1 = require('./app.component');
+var app_routing_module_1 = require('./app-routing.module');
 var menu_service_1 = require('./_services/menu.service');
 var clickAfuera_directive_1 = require('./_directives/clickAfuera.directive');
 var mainNavBar_component_1 = require('./mainNavBar/mainNavBar.component');
@@ -31,6 +32,7 @@ var AppModule = (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
+                app_routing_module_1.AppRoutingModule,
                 mainNavBar_component_1.MainNavBar,
                 sidebarNav_component_1.SidebarNav,
                 dashboard_component_1.Dashboard,

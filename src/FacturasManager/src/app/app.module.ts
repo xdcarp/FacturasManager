@@ -4,24 +4,30 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.module';
 
 import { MenuesService } from './_services/menu.service';
+import { PersonasService } from './_services/personas/personas.service';
 import { ClickAfueraDirective } from './_directives/clickAfuera.directive';
+
+import { PageNotFoundComponent } from './shared/pageNotFound.component';
 
 import { MainNavBar } from './mainNavBar/mainNavBar.component';
 import { SidebarNav } from './sidebarNav/sidebarNav.component';
 import { Dashboard } from './dashboard/dashboard.component';
 import { FooterNav } from './footerNav/footerNav.component';
 
+import { ListaPersonasComponent } from './personas/lista/listapersonas.component';
+
 @NgModule({
     imports: [
         BrowserModule,
         CommonModule,
-        MaterialModule.forRoot()
+        MaterialModule.forRoot(),
+        AppRoutingModule
         /*,
         MultiselectDropdownModule,
-        ChartsModule,
-        AppRoutingModule,
+        ChartsModule,        
         CoreModule,
         TicketsModule,
         DashboardModule,
@@ -29,16 +35,18 @@ import { FooterNav } from './footerNav/footerNav.component';
     ],
     declarations: [
         AppComponent,
+        PageNotFoundComponent,
         MainNavBar,
         SidebarNav,
         Dashboard,
         FooterNav,
+        ListaPersonasComponent,
         ClickAfueraDirective
         /*GtNavComponent,
         GtUsuarioinfoComponent,
         GtRouteSecuredDirective*/
     ],
-    providers: [MenuesService],
+    providers: [MenuesService, PersonasService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

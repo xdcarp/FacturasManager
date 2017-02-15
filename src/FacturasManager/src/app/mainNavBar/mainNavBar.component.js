@@ -20,10 +20,15 @@ var MainNavBar = (function () {
     };
     MainNavBar.prototype.toggleMenu = function (itemSeleccionado) {
         this.opciones = itemSeleccionado.opciones;
-        this.menuState = this.menuState === 'out' ? 'in' : 'out';
     };
-    MainNavBar.prototype.esconderBarra = function () {
-        this.menuState = 'out';
+    MainNavBar.prototype.esconderBarra = function (event) {
+        if (this.menuPrincipalOpts.find(function (opcion) { return opcion.name == event.innerText; }) ||
+            this.opciones.find(function (opt) { return opt == event.innerText; })) {
+            this.menuState = 'out';
+        }
+        else {
+            this.menuState = 'in';
+        }
     };
     MainNavBar = __decorate([
         core_1.Component({

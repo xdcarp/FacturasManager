@@ -17,7 +17,7 @@ var ClickAfueraDirective = (function () {
     ClickAfueraDirective.prototype.onClick = function (targetElement) {
         var clickedInside = this._elementRef.nativeElement.contains(targetElement);
         if (!clickedInside) {
-            this.clickAfuera.emit(null);
+            this.clickAfuera.emit(targetElement);
         }
     };
     __decorate([

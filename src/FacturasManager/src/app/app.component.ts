@@ -10,6 +10,7 @@ import { MainNavBar } from './mainNavBar/mainNavBar.component';
 import { SidebarNav } from './sidebarNav/sidebarNav.component';
 import { Dashboard } from './dashboard/dashboard.component';
 import { FooterNav } from './footerNav/footerNav.component';
+
 import { ListaPersonasComponent } from './personas/lista/listapersonas.component';
 
 @Component({
