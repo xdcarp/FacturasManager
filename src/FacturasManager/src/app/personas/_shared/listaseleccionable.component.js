@@ -10,24 +10,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var personas_service_1 = require('../../_services/personas/personas.service');
-var odd_service_1 = require('../../_services/odd/odd.service');
-var AltaPersonaComponent = (function () {
-    function AltaPersonaComponent(personasService, oddService) {
-        this.personasService = personasService;
-        this.oddService = oddService;
-        this.listadoOdd = oddService.getODDs();
+var ListaSeleccionablePersonasComponent = (function () {
+    function ListaSeleccionablePersonasComponent(servicioPersonas) {
+        this.servicioPersonas = servicioPersonas;
+        this.listaPersonas = servicioPersonas.getPersonas();
     }
-    AltaPersonaComponent.prototype.addNewPersona = function () {
-        //TODO: llamar al servicio de personas y darla de alta
+    ListaSeleccionablePersonasComponent.prototype.mostrarseleccionada = function (persona) {
+        this.personaSeleccionada = persona;
     };
-    AltaPersonaComponent = __decorate([
+    ListaSeleccionablePersonasComponent = __decorate([
         core_1.Component({
-            selector: 'altapersona',
-            template: require('./altapersona.component.html')
+            selector: 'listaseleccionablepersonas',
+            template: require('./listaseleccionable.component.html')
         }), 
-        __metadata('design:paramtypes', [personas_service_1.PersonasService, odd_service_1.ODDService])
-    ], AltaPersonaComponent);
-    return AltaPersonaComponent;
+        __metadata('design:paramtypes', [personas_service_1.PersonasService])
+    ], ListaSeleccionablePersonasComponent);
+    return ListaSeleccionablePersonasComponent;
 }());
-exports.AltaPersonaComponent = AltaPersonaComponent;
-//# sourceMappingURL=altapersona.component.js.map
+exports.ListaSeleccionablePersonasComponent = ListaSeleccionablePersonasComponent;
+//# sourceMappingURL=listaseleccionable.component.js.map

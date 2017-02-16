@@ -20,6 +20,7 @@ var MainNavBar = (function () {
     };
     MainNavBar.prototype.toggleMenu = function (itemSeleccionado) {
         this.opciones = itemSeleccionado.opciones;
+        this.rutas = itemSeleccionado.rutas;
     };
     MainNavBar.prototype.esconderBarra = function (event) {
         if (this.menuPrincipalOpts.find(function (opcion) { return opcion.name == event.innerText; }) ||

@@ -9,9 +9,8 @@ import { PersonasService } from '../../_services/personas/personas.service';
 export class ListaPersonasComponent {
     
     listaPersonas: any[];
+
     constructor(private servicioPersonas: PersonasService) { 
         this.listaPersonas = servicioPersonas.getPersonas();
-    }
-
-    
+    }    
 }

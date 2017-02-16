@@ -15,11 +15,18 @@ var material_1 = require('@angular/material');
 var app_component_1 = require('./app.component');
 var app_routing_module_1 = require('./app-routing.module');
 var menu_service_1 = require('./_services/menu.service');
+var personas_service_1 = require('./_services/personas/personas.service');
+var odd_service_1 = require('./_services/odd/odd.service');
 var clickAfuera_directive_1 = require('./_directives/clickAfuera.directive');
+var pageNotFound_component_1 = require('./shared/pageNotFound.component');
 var mainNavBar_component_1 = require('./mainNavBar/mainNavBar.component');
 var sidebarNav_component_1 = require('./sidebarNav/sidebarNav.component');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
 var footerNav_component_1 = require('./footerNav/footerNav.component');
+var listaseleccionable_component_1 = require('./personas/_shared/listaseleccionable.component');
+var listapersonas_component_1 = require('./personas/lista/listapersonas.component');
+var altapersona_component_1 = require('./personas/alta/altapersona.component');
+var edicionpersona_component_1 = require('./personas/edicion/edicionpersona.component');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -28,18 +35,23 @@ var AppModule = (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 common_1.CommonModule,
-                material_1.MaterialModule.forRoot()
+                material_1.MaterialModule.forRoot(),
+                app_routing_module_1.AppRoutingModule
             ],
             declarations: [
                 app_component_1.AppComponent,
-                app_routing_module_1.AppRoutingModule,
+                pageNotFound_component_1.PageNotFoundComponent,
                 mainNavBar_component_1.MainNavBar,
                 sidebarNav_component_1.SidebarNav,
                 dashboard_component_1.Dashboard,
                 footerNav_component_1.FooterNav,
+                listaseleccionable_component_1.ListaSeleccionablePersonasComponent,
+                listapersonas_component_1.ListaPersonasComponent,
+                altapersona_component_1.AltaPersonaComponent,
+                edicionpersona_component_1.EdicionPersonaComponent,
                 clickAfuera_directive_1.ClickAfueraDirective
             ],
-            providers: [menu_service_1.MenuesService],
+            providers: [menu_service_1.MenuesService, personas_service_1.PersonasService, odd_service_1.ODDService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

@@ -9,14 +9,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var persona_1 = require('./persona');
 var PersonasService = (function () {
     function PersonasService() {
         this.personas = [
-            new Persona('Gaby Gutierrez', true, '112223334'),
-            new Persona('Dario Furman', false, '116666552'),
-            new Persona('Gonzalo de la Vega', true, '116666552'),
-            new Persona('Federico Palumbo', true, '116666552'),
-            new Persona('Rodrigo Pereira', false, '116666552'),
+            new persona_1.Persona(1, 'Gaby Gutierrez', true, '112223334'),
+            new persona_1.Persona(2, 'Dario Furman', false, '116666552'),
+            new persona_1.Persona(3, 'Gonzalo de la Vega', true, '116666552'),
+            new persona_1.Persona(4, 'Federico Palumbo', true, '116666552'),
+            new persona_1.Persona(5, 'Rodrigo Pereira', false, '116666552'),
         ];
     }
     PersonasService.prototype.getPersonas = function () {
@@ -29,15 +30,4 @@ var PersonasService = (function () {
     return PersonasService;
 }());
 exports.PersonasService = PersonasService;
-/**
- * Persona
- */
-var Persona = (function () {
-    function Persona(elnombre, quieretraerODD, eltelefono) {
-        this.nombreyapellido = elnombre;
-        this.traeODD = quieretraerODD;
-        this.telefono = eltelefono;
-    }
-    return Persona;
-}());
 //# sourceMappingURL=personas.service.js.map

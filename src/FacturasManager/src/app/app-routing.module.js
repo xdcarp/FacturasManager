@@ -12,14 +12,16 @@ var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var pageNotFound_component_1 = require('./shared/pageNotFound.component');
 var listapersonas_component_1 = require('./personas/lista/listapersonas.component');
+var altapersona_component_1 = require('./personas/alta/altapersona.component');
+var edicionpersona_component_1 = require('./personas/edicion/edicionpersona.component');
 // import { Name3Component } from './';
 // import { Name4Component } from './';
 // import { PageNotFoundComponent } from './';
 var routes = [
     { path: '', component: listapersonas_component_1.ListaPersonasComponent },
     { path: 'listado-personas', component: listapersonas_component_1.ListaPersonasComponent },
-    // { path: 'path3', component: Name3Component },
-    // { path: 'path4', component: Name4Component },
+    { path: 'alta-persona', component: altapersona_component_1.AltaPersonaComponent },
+    { path: 'editar-persona', component: edicionpersona_component_1.EdicionPersonaComponent },
     // { path: '**', component: PageNotFoundComponent },
     //{ path: 'path/:routeParam', component: MyComponent },
     //{ path: 'staticPath', component: ... },

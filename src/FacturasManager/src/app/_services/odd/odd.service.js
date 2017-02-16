@@ -9,21 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var EdicionPersonaComponent = (function () {
-    function EdicionPersonaComponent() {
+var ODDService = (function () {
+    function ODDService() {
+        this.objetosDeDeseo = [
+            new ODD(1, 'Facturas'),
+            new ODD(2, 'Yerba'),
+            new ODD(3, 'Café')
+        ];
     }
-    EdicionPersonaComponent.prototype.mostrarpersonaseleccionada = function (personaSeleccionada) {
-        debugger;
-        alert(personaSeleccionada.nombreyapellido);
+    ODDService.prototype.getODDs = function () {
+        return this.objetosDeDeseo;
     };
-    EdicionPersonaComponent = __decorate([
-        core_1.Component({
-            selector: 'edicionpersona',
-            template: require('./edicionpersona.component.html')
-        }), 
+    ODDService = __decorate([
+        core_1.Injectable(), 
         __metadata('design:paramtypes', [])
-    ], EdicionPersonaComponent);
-    return EdicionPersonaComponent;
+    ], ODDService);
+    return ODDService;
 }());
-exports.EdicionPersonaComponent = EdicionPersonaComponent;
-//# sourceMappingURL=edicionpersona.component.js.map
+exports.ODDService = ODDService;
+var ODD = (function () {
+    function ODD(id, nombre) {
+        this.id = id;
+        this.nombre = nombre;
+    }
+    return ODD;
+}());
+//# sourceMappingURL=odd.service.js.map

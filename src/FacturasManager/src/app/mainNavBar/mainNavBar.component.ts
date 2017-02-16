@@ -35,9 +35,11 @@ export class MainNavBar implements OnInit {
     }
 
     opciones: string[];
+    rutas: string[];
 
     toggleMenu(itemSeleccionado) {
         this.opciones = itemSeleccionado.opciones;
+        this.rutas = itemSeleccionado.rutas;
     }
 
     esconderBarra(event) {

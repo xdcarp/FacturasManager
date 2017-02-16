@@ -1,1 +1,1 @@
-{"version":3,"file":"edicionpersona.component.js","sourceRoot":"","sources":["edicionpersona.component.ts"],"names":[],"mappings":""}
+{"version":3,"file":"edicionpersona.component.js","sourceRoot":"","sources":["edicionpersona.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAA0B,eAAe,CAAC,CAAA;AAS1C;IACI;IAAgB,CAAC;IAEjB,4DAA0B,GAA1B,UAA2B,mBAA4B;QACnD,QAAQ,CAAC;QACT,KAAK,CAAC,mBAAmB,CAAC,eAAe,CAAC,CAAC;IAC/C,CAAC;IAVL;QAAC,gBAAS,CAAC;YACP,QAAQ,EAAE,gBAAgB;YAC1B,QAAQ,EAAE,OAAO,CAAC,iCAAiC,CAAC;SACvD,CAAC;;+BAAA;IAQF,8BAAC;AAAD,CAAC,AAPD,IAOC;AAPY,+BAAuB,0BAOnC,CAAA"}

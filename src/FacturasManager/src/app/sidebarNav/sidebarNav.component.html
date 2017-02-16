@@ -1,8 +1,9 @@
 <nav class="hidden-xs-down bg-faded pr-0 pl-0">
     <ul class="nav nav-pills flex-column">
         <li class="nav-item" *ngFor="let item of opciones; let idx = index"> 
-            <a class="nav-link" [ngClass]="{active: esLaOpcionActiva === idx + 1}" href="#" 
-               (click)="setOpcionSeleccionada(idx + 1)">{{item}}</a>
+            <a class="nav-link" [ngClass]="{active: esLaOpcionActiva === idx + 1}"            
+            (click)="setOpcionSeleccionada(idx + 1, idx)"
+            role="button">{{item}}</a>
         </li>
     </ul>
 </nav>

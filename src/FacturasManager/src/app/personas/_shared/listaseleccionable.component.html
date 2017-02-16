@@ -11,7 +11,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let persona of listaPersonas">        
+          <tr class="mouse-manito" *ngFor="let persona of listaPersonas" (click)="mostrarseleccionada(persona)">        
             <td>{{persona.id}}</td>
             <td>{{persona.nombreyapellido}}</td>
             <td>{{persona.telefono}}</td>
