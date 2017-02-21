@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from './shared/pageNotFound.component';
+import { PageNotFoundComponent } from './shared/pageNotFound/pageNotFound.component';
 import { ListaPersonasComponent } from './personas/lista/listapersonas.component';
 import { AltaPersonaComponent } from './personas/alta/altapersona.component';
 import { EdicionPersonaComponent } from './personas/edicion/edicionpersona.component';

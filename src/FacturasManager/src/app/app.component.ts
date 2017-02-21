@@ -11,6 +11,7 @@ import { MainNavBar } from './mainNavBar/mainNavBar.component';
 import { SidebarNav } from './sidebarNav/sidebarNav.component';
 import { Dashboard } from './dashboard/dashboard.component';
 import { FooterNav } from './footerNav/footerNav.component';
+//import {BackdropComponent } from './shared/backdrop/backdrop.component';
 
 // import { ListaSeleccionablePersonasComponent } from './personas/_shared/listaseleccionable.component';
 // import { ListaPersonasComponent } from './personas/lista/listapersonas.component';

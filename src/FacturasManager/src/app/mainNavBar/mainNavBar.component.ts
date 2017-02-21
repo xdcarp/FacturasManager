@@ -34,8 +34,8 @@ export class MainNavBar implements OnInit {
         this.menuState = 'in';        
     }
 
-    opciones: string[];
-    rutas: string[];
+    opciones: string[] = [];
+    rutas: string[] = [];
 
     toggleMenu(itemSeleccionado) {
         this.opciones = itemSeleccionado.opciones;
