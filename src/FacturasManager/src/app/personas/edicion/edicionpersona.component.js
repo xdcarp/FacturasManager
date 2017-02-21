@@ -9,19 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var personas_service_1 = require('../../_services/personas/personas.service');
+var odd_service_1 = require('../../_services/odd/odd.service');
 var EdicionPersonaComponent = (function () {
-    function EdicionPersonaComponent() {
+    function EdicionPersonaComponent(personasService, oddService) {
+        this.personasService = personasService;
+        this.oddService = oddService;
+        this.listadoOdd = oddService.getODDs();
     }
     EdicionPersonaComponent.prototype.mostrarpersonaseleccionada = function (personaSeleccionada) {
-        debugger;
-        alert(personaSeleccionada.nombreyapellido);
+        this.personaSeleccionada = personaSeleccionada;
     };
     EdicionPersonaComponent = __decorate([
         core_1.Component({
             selector: 'edicionpersona',
             template: require('./edicionpersona.component.html')
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [personas_service_1.PersonasService, odd_service_1.ODDService])
     ], EdicionPersonaComponent);
     return EdicionPersonaComponent;
 }());

@@ -18,17 +18,15 @@ import { SidebarNav } from './sidebarNav/sidebarNav.component';
 import { Dashboard } from './dashboard/dashboard.component';
 import { FooterNav } from './footerNav/footerNav.component';
 
-import { ListaSeleccionablePersonasComponent } from './personas/_shared/listaseleccionable.component';
-import { ListaPersonasComponent } from './personas/lista/listapersonas.component';
-import { AltaPersonaComponent } from './personas/alta/altapersona.component';
-import { EdicionPersonaComponent } from './personas/edicion/edicionpersona.component';
+import { PersonaModule } from './personas/personas.module';
 
 @NgModule({
     imports: [
         BrowserModule,
         CommonModule,
         MaterialModule.forRoot(),
-        AppRoutingModule
+        AppRoutingModule,
+        PersonaModule
         /*,
         MultiselectDropdownModule,
         ChartsModule,        
@@ -43,11 +41,7 @@ import { EdicionPersonaComponent } from './personas/edicion/edicionpersona.compo
         MainNavBar,
         SidebarNav,
         Dashboard,
-        FooterNav,
-        ListaSeleccionablePersonasComponent,
-        ListaPersonasComponent,
-        AltaPersonaComponent,
-        EdicionPersonaComponent,
+        FooterNav,        
         ClickAfueraDirective
         /*GtNavComponent,
         GtUsuarioinfoComponent,

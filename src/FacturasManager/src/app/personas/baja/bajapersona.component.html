@@ -1,0 +1,48 @@
+<listaseleccionablepersonas (onSelected)="getdatosPersonaSeleccionada($event)"></listaseleccionablepersonas>
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ <div class="modal-dialog" role="document">
+     <div class="modal-content">
+     <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel">Eliminar datos</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+         </button>
+     </div>
+     <div class="modal-body">
+         ¿Desea Eliminar los datos de:?
+     </div>
+     <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Borrar Datos</button>
+     </div>
+     </div>
+ </div>
+ </div>
+ <div class="card w-100" *ngIf="mostrarDatos">
+     <div class="card-header">
+     <h2>Datos de la persona</h2>
+     </div>    
+     <div class="card-block">
+         <h3 class="card-title">Nombre de la persona</h3>
+         <form>
+             <div class="form-group col-md-2">
+                 <p class="card-text">Teléfono: {{ personaSeleccionada? personaSeleccionada.telefono: ''}}</p>
+             </div>            
+             <div class="form-group col-md-3">
+                 <legend class="col-form-legend">Objetos de deseo</legend>
+                 <div class="form-check" *ngFor="let odd of listadoOdd">
+                     <label class="form-check-label" >
+                         <input class="form-check-input disabled" type="checkbox">{{odd.nombre}}
+                     </label>
+                 </div>
+             </div>            
+             <div class="form-group col-md-3">
+                 <!--<input type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" value="Eliminar">-->
+                 <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">
+                 Eliminar
+                 </button>
+             </div>            
+         </form>
+     </div>    
+ </div>
