@@ -14,14 +14,13 @@ var pageNotFound_component_1 = require('./shared/pageNotFound.component');
 var listapersonas_component_1 = require('./personas/lista/listapersonas.component');
 var altapersona_component_1 = require('./personas/alta/altapersona.component');
 var edicionpersona_component_1 = require('./personas/edicion/edicionpersona.component');
-// import { Name3Component } from './';
-// import { Name4Component } from './';
-// import { PageNotFoundComponent } from './';
+var bajapersona_component_1 = require('./personas/baja/bajapersona.component');
 var routes = [
     { path: '', component: listapersonas_component_1.ListaPersonasComponent },
     { path: 'listado-personas', component: listapersonas_component_1.ListaPersonasComponent },
     { path: 'alta-persona', component: altapersona_component_1.AltaPersonaComponent },
     { path: 'editar-persona', component: edicionpersona_component_1.EdicionPersonaComponent },
+    { path: 'baja-persona', component: bajapersona_component_1.BajaPersonaComponent },
     // { path: '**', component: PageNotFoundComponent },
     //{ path: 'path/:routeParam', component: MyComponent },
     //{ path: 'staticPath', component: ... },

@@ -9,12 +9,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var odd_1 = require('./odd');
 var ODDService = (function () {
     function ODDService() {
         this.objetosDeDeseo = [
-            new ODD(1, 'Facturas'),
-            new ODD(2, 'Yerba'),
-            new ODD(3, 'Café')
+            new odd_1.ODD(1, 'Facturas'),
+            new odd_1.ODD(2, 'Yerba'),
+            new odd_1.ODD(3, 'Café')
         ];
     }
     ODDService.prototype.getODDs = function () {
@@ -27,11 +28,4 @@ var ODDService = (function () {
     return ODDService;
 }());
 exports.ODDService = ODDService;
-var ODD = (function () {
-    function ODD(id, nombre) {
-        this.id = id;
-        this.nombre = nombre;
-    }
-    return ODD;
-}());
 //# sourceMappingURL=odd.service.js.map

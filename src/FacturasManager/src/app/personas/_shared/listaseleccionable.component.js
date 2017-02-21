@@ -13,11 +13,16 @@ var personas_service_1 = require('../../_services/personas/personas.service');
 var ListaSeleccionablePersonasComponent = (function () {
     function ListaSeleccionablePersonasComponent(servicioPersonas) {
         this.servicioPersonas = servicioPersonas;
+        this.onSelected = new core_1.EventEmitter();
         this.listaPersonas = servicioPersonas.getPersonas();
     }
     ListaSeleccionablePersonasComponent.prototype.mostrarseleccionada = function (persona) {
-        this.personaSeleccionada = persona;
+        this.onSelected.emit(persona);
     };
+    __decorate([
+        core_1.Output(), 
+        __metadata('design:type', Object)
+    ], ListaSeleccionablePersonasComponent.prototype, "onSelected", void 0);
     ListaSeleccionablePersonasComponent = __decorate([
         core_1.Component({
             selector: 'listaseleccionablepersonas',

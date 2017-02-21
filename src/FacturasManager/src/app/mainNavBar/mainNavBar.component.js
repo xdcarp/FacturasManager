@@ -10,45 +10,47 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var menu_service_1 = require('../_services/menu.service');
+var backdrop_component_1 = require("../shared/backdrop/backdrop.component");
+var sidebarnav_component_1 = require('../sidebarnav/sidebarnav.component');
 var MainNavBar = (function () {
-    function MainNavBar(menuService) {
+    function MainNavBar(menuService, backdropService, sidebarNavService) {
         this.menuService = menuService;
+        this.backdropService = backdropService;
+        this.sidebarNavService = sidebarNavService;
         this.menuPrincipalOpts = this.menuService.getOpcionesMenuPrincipal();
+        //this.opciones = this.menuPrincipalOpts.find(x => x.idMenu).opciones;
+        // this.isVisible = false;
+        // backdropService.Toggle.subscribe(isVisible => {
+        //     console.log(isVisible);
+        //     this.menuState = isVisible ? 'out' : "in";
+        // });
     }
     MainNavBar.prototype.ngOnInit = function () {
         this.menuState = 'in';
     };
-    MainNavBar.prototype.toggleMenu = function (itemSeleccionado) {
-        this.opciones = itemSeleccionado.opciones;
-        this.rutas = itemSeleccionado.rutas;
+    // opciones: string[];
+    // rutas: string[];
+    MainNavBar.prototype.showSideBar = function (itemSeleccionado) {
+        this.sidebarNavService.newConfig(itemSeleccionado.opciones, itemSeleccionado.rutas);
+        // this.opciones = itemSeleccionado.opciones;
+        // this.rutas = itemSeleccionado.rutas;
+        //this.backdropService.show();
     };
     MainNavBar.prototype.esconderBarra = function (event) {
-        if (this.menuPrincipalOpts.find(function (opcion) { return opcion.name == event.innerText; }) ||
-            this.opciones.find(function (opt) { return opt == event.innerText; })) {
-            this.menuState = 'out';
-        }
-        else {
-            this.menuState = 'in';
-        }
+        /*   if (this.menuPrincipalOpts.find(opcion => opcion.name == event.innerText) ||
+           this.opciones.find(opt => opt == event.innerText)){
+               this.menuState = 'out';
+           }
+           else {
+               this.menuState = 'in';
+           }*/
     };
     MainNavBar = __decorate([
         core_1.Component({
             selector: 'mainnavbar',
-            template: require('./mainNavBar.component.html'),
-            animations: [
-                core_1.trigger('slideInOut', [
-                    core_1.state('in', core_1.style({
-                        transform: 'translate3d(-100%, 0, 0)'
-                    })),
-                    core_1.state('out', core_1.style({
-                        transform: 'translate3d(0, 0, 0)'
-                    })),
-                    core_1.transition('in => out', core_1.animate('400ms ease-in-out')),
-                    core_1.transition('out => in', core_1.animate('400ms ease-in-out'))
-                ]),
-            ]
+            template: require('./mainNavBar.component.html')
         }), 
-        __metadata('design:paramtypes', [menu_service_1.MenuesService])
+        __metadata('design:paramtypes', [menu_service_1.MenuesService, backdrop_component_1.BackdropService, sidebarnav_component_1.SidebarNavService])
     ], MainNavBar);
     return MainNavBar;
 }());

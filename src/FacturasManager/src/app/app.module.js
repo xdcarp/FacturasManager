@@ -23,10 +23,8 @@ var mainNavBar_component_1 = require('./mainNavBar/mainNavBar.component');
 var sidebarNav_component_1 = require('./sidebarNav/sidebarNav.component');
 var dashboard_component_1 = require('./dashboard/dashboard.component');
 var footerNav_component_1 = require('./footerNav/footerNav.component');
-var listaseleccionable_component_1 = require('./personas/_shared/listaseleccionable.component');
-var listapersonas_component_1 = require('./personas/lista/listapersonas.component');
-var altapersona_component_1 = require('./personas/alta/altapersona.component');
-var edicionpersona_component_1 = require('./personas/edicion/edicionpersona.component');
+var backdrop_component_1 = require('./shared/backdrop/backdrop.component');
+var persona_module_1 = require('./personas/persona.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -36,7 +34,8 @@ var AppModule = (function () {
                 platform_browser_1.BrowserModule,
                 common_1.CommonModule,
                 material_1.MaterialModule.forRoot(),
-                app_routing_module_1.AppRoutingModule
+                app_routing_module_1.AppRoutingModule,
+                persona_module_1.PersonaModule
             ],
             declarations: [
                 app_component_1.AppComponent,
@@ -45,13 +44,10 @@ var AppModule = (function () {
                 sidebarNav_component_1.SidebarNav,
                 dashboard_component_1.Dashboard,
                 footerNav_component_1.FooterNav,
-                listaseleccionable_component_1.ListaSeleccionablePersonasComponent,
-                listapersonas_component_1.ListaPersonasComponent,
-                altapersona_component_1.AltaPersonaComponent,
-                edicionpersona_component_1.EdicionPersonaComponent,
+                backdrop_component_1.BackdropComponent,
                 clickAfuera_directive_1.ClickAfueraDirective
             ],
-            providers: [menu_service_1.MenuesService, personas_service_1.PersonasService, odd_service_1.ODDService],
+            providers: [menu_service_1.MenuesService, personas_service_1.PersonasService, odd_service_1.ODDService, backdrop_component_1.BackdropService],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

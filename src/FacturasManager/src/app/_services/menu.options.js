@@ -5,7 +5,7 @@ var MenuPrincipal = (function () {
     MenuPrincipal.MenuPrincipalOpts = [
         {
             "idMenu": 1, "name": 'Personas', "opciones": ['Agregar', 'Eliminar', 'Modificar', 'Listar'],
-            "rutas": ['/alta-persona', '', '/editar-persona', '/listado-personas']
+            "rutas": ['/alta-persona', '/baja-persona', '/editar-persona', '/listado-personas']
         },
         {
             "idMenu": 2, "name": 'ODD (Objetos de Deseo)', "opciones": ['Agregar', 'Eliminar', 'Modificar', 'Listar'],

@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
             <li class="nav-ietm" *ngFor="let itemMenuPrincipal of menuPrincipalOpts">
-               <a class="nav-link mouse-manito" (click)="toggleMenu(itemMenuPrincipal)" (clickAfuera)="esconderBarra($event)">{{itemMenuPrincipal.name}}</a>
+               <a class="nav-link mouse-manito" (click)="showSideBar(itemMenuPrincipal)">{{itemMenuPrincipal.name}}</a> <!--(clickAfuera)="esconderBarra($event)"-->
             </li>
         </ul>
         <form class="form-inline mt-2 mt-md-0">
@@ -17,6 +17,4 @@
         </form>
     </div>
 </nav>
-<sidebarNav [@slideInOut]="menuState"  [opciones]="opciones" [rutas]="rutas">    
-</sidebarNav>
    
