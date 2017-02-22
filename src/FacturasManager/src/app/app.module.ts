@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MenuesService } from './_services/menu.service';
 import { PersonasService } from './_services/personas/personas.service';
 import { ODDService } from './_services/odd/odd.service';
+import { SidebarNavService } from './_services/sidebarNav/sidebarNav.service';
 import { ClickAfueraDirective } from './_directives/clickAfuera.directive';
 
 // import { PageNotFoundComponent } from './shared/pageNotFound/pageNotFound.component';
@@ -27,16 +29,10 @@ import { PersonaModule } from './personas/personas.module';
         BrowserModule,
         CommonModule,
         MaterialModule.forRoot(),
+        NgbModule.forRoot(),
         AppRoutingModule,
         SharedModule,
-        PersonaModule,
-        /*,
-        MultiselectDropdownModule,
-        ChartsModule,        
-        CoreModule,
-        TicketsModule,
-        DashboardModule,
-        UsuariosModule*/
+        PersonaModule
     ],
     declarations: [
         AppComponent,
@@ -44,12 +40,9 @@ import { PersonaModule } from './personas/personas.module';
         SidebarNav,
         Dashboard,
         FooterNav,        
-        ClickAfueraDirective
-        /*GtNavComponent,
-        GtUsuarioinfoComponent,
-        GtRouteSecuredDirective*/
+        ClickAfueraDirective        
     ],
-    providers: [MenuesService, PersonasService, ODDService],
+    providers: [MenuesService, PersonasService, ODDService, SidebarNavService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

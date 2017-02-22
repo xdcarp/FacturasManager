@@ -1,4 +1,4 @@
-<nav class="hidden-xs-down bg-faded pr-0 pl-0">
+<nav class="hidden-xs-down bg-faded pr-0 pl-0" [@slideInOut]="menuState">
     <ul class="nav nav-pills flex-column">
         <li class="nav-item" *ngFor="let item of opciones; let idx = index"> 
             <a class="nav-link" [ngClass]="{active: esLaOpcionActiva === idx + 1}"            

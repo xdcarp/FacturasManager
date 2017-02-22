@@ -7,7 +7,7 @@ export class Persona {
     public traeODD: boolean;
     public telefono: string;
 
-    constructor(id: number, elnombre: string, quieretraerODD: boolean, eltelefono: string) { 
+    constructor(id?: number, elnombre?: string, quieretraerODD?: boolean, eltelefono?: string) { 
         this.id = id;
         this.nombreyapellido = elnombre;
         this.traeODD = quieretraerODD;

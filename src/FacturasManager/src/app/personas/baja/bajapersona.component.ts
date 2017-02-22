@@ -7,6 +7,7 @@ import { ListaSeleccionablePersonasComponent } from '../_shared/listaseleccionab
 
 import { PersonasService } from '../../_services/personas/personas.service';
 import { ODDService } from '../../_services/odd/odd.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'bajapersona',
@@ -14,16 +15,22 @@ import { ODDService } from '../../_services/odd/odd.service';
 })
 export class BajaPersonaComponent {
     
-    personaSeleccionada: Persona;
+    personaSeleccionada: Persona = new Persona();
     listadoOdd: ODD[];
     mostrarDatos: boolean = false;
 
-    constructor(private personasService: PersonasService, private oddService: ODDService) {
+    constructor(private personasService: PersonasService, private oddService: ODDService,
+    private modalService: NgbModal) {
         this.listadoOdd = oddService.getODDs();
     }
 
-    getdatosPersonaSeleccionada(personaSeleccionada: Persona) {
+    getdatosPersonaSeleccionada(personaSeleccionada: Persona, content) {
         this.personaSeleccionada = personaSeleccionada;
-        this.mostrarDatos = true;
+        //this.mostrarDatos = true;
+        this.modalService.open(content);
     }
+
+    open(content) {
+        this.modalService.open(content);
+  }
 }

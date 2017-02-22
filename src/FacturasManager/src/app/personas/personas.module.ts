@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 
@@ -24,7 +25,9 @@ import { BajaPersonaComponent } from '../personas/baja/bajapersona.component';
         ],
     imports: [
         BrowserModule,
-        CommonModule],
+        CommonModule,        
+        NgbModule
+    ],
     exports: [                
     ],
     providers: [

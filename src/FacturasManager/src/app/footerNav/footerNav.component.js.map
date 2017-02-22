@@ -1,1 +1,0 @@
-{"version":3,"file":"footerNav.component.js","sourceRoot":"","sources":["footerNav.component.ts"],"names":[],"mappings":";;;;;;;;;;AAAA,qBAAkC,eAAe,CAAC,CAAA;AAMlD;IACI;IAAgB,CAAC;IAEjB,4BAAQ,GAAR,cAAa,CAAC;IAPlB;QAAC,gBAAS,CAAC;YACP,QAAQ,EAAE,WAAW;YACrB,QAAQ,EAAE,OAAO,CAAC,4BAA4B,CAAC;SAClD,CAAC;;iBAAA;IAKF,gBAAC;AAAD,CAAC,AAJD,IAIC;AAJY,iBAAS,YAIrB,CAAA"}

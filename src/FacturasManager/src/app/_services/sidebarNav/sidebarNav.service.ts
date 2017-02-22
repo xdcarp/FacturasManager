@@ -6,31 +6,23 @@ import { BackdropService } from '../backdrop/backdrop.service';
 export class SidebarNavService {
     
     Seleccion: EventEmitter<{ opciones: string[], rutas: string[] }>;
-    isVisible: boolean;
+    VisibilityChanged: EventEmitter<boolean>;
     
-    constructor() { //private backdropService: BackdropService
+    constructor(private backdropService: BackdropService) {
         this.Seleccion = new EventEmitter<{ opciones: string[], rutas: string[] }>();
-        this.isVisible = false;
+        this.VisibilityChanged = new EventEmitter<boolean>();
     }
     
-    
-    // public show() {
-    //     this.isVisible = true;
-    //     // this.Seleccion.emit(this.isVisible);
-    //     this.backdropService.show();
-    // }
+    public show() {
+        this.VisibilityChanged.emit(true);
+    }
 
-    // public hide() {
-    //     this.isVisible = false;
-    //     // this.Seleccion.emit(this.isVisible);
-    //     this.backdropService.show();
-    // }
+    public hide() {
+        this.VisibilityChanged.emit(false);
+    }
 
     public newConfig(opciones: string[], rutas: string[]) {
-        if (!this.isVisible) {
-            //this.show();
-            this.isVisible = true;
-        }
         this.Seleccion.emit({ opciones: opciones, rutas: rutas });
+        this.show();             
     }
 }
