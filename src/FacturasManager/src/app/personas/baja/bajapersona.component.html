@@ -1,31 +1,20 @@
 <template ngbModalContainer></template>
 <template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
+  <div class="popover-right">
+  <div class="modal-header pop">
     <h4 class="modal-title">Eliminar Persona</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+    <button type="button" class="close" aria-label="Close" (click)="d()">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
     <p>¿Desea Eliminar los datos de: <strong>{{personaSeleccionada.nombreyapellido}}</strong></p>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
-    <button type="button" class="btn btn-primary">Borrar Datos</button>
-  </div>          
-</template>
-<listaseleccionablepersonas (onSelected)="getdatosPersonaSeleccionada($event, content)"></listaseleccionablepersonas>
- <!--<div class="card w-100" *ngIf="mostrarDatos">
-     <div class="card-header">
-     <h2>Datos de la persona</h2>
-     </div>    
-     <div class="card-block">
-         <h3 class="card-title">{{personaSeleccionada.nombreyapellido}}</h3>
+    <div class="card-block">
          <form>
              <div class="form-group col-md-2">
                  <p class="card-text">Teléfono: {{personaSeleccionada.telefono}}</p>
              </div>            
-             <div class="form-group col-md-3">
+             <div class="form-group col-md-5">
                  <legend class="col-form-legend">Objetos de deseo</legend>
                  <div class="form-check" *ngFor="let odd of listadoOdd">
                      <label class="form-check-label" >
@@ -34,22 +23,12 @@
                  </div>
              </div>                     
          </form>
-         <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Eliminar</button>
-     </div>    
- </div>-->
-<!--<template ngbModalContainer></template>
-<template #content let-c="close" let-d="dismiss">
-  <div class="modal-header">
-    <h4 class="modal-title">Eliminar Persona</h4>
-    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <p>¿Desea Eliminar los datos de: <strong>{{personaSeleccionada.nombreyapellido}}</strong></p>
+     </div>
   </div>
   <div class="modal-footer">
-    <button type="button" class="btn btn-secondary" (click)="c('Close click')">Cancelar</button>
+    <button type="button" class="btn btn-secondary" (click)="c()">Cancelar</button>
     <button type="button" class="btn btn-primary">Borrar Datos</button>
+  </div>
   </div>          
-</template>-->
+</template>
+<listaseleccionablepersonas (onSelected)="getdatosPersonaSeleccionada($event, content)"></listaseleccionablepersonas> 

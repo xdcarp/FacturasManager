@@ -6,9 +6,10 @@ import { ListaPersonasComponent } from './personas/lista/listapersonas.component
 import { AltaPersonaComponent } from './personas/alta/altapersona.component';
 import { EdicionPersonaComponent } from './personas/edicion/edicionpersona.component';
 import { BajaPersonaComponent } from './personas/baja/bajapersona.component'
-// import { Name3Component } from './';
-// import { Name4Component } from './';
-// import { PageNotFoundComponent } from './';
+import { ListaOddComponent } from './odd/lista/listaodd.component';
+import { AltaOddComponent } from './odd/alta/altaodd.component';
+import { EdicionOddComponent } from './odd/edicion/edicionodd.component';
+import { BajaOddComponent } from './odd/baja/bajaodd.component'
 
 const routes: Routes = [
     { path: '', component: ListaPersonasComponent },
@@ -16,10 +17,10 @@ const routes: Routes = [
     { path: 'alta-persona', component: AltaPersonaComponent },
     { path: 'editar-persona', component: EdicionPersonaComponent },
     { path: 'baja-persona', component: BajaPersonaComponent },
-    // { path: '**', component: PageNotFoundComponent },
-
-    //{ path: 'path/:routeParam', component: MyComponent },
-    //{ path: 'staticPath', component: ... },
+    { path: 'editar-odd', component: EdicionOddComponent },
+    { path: 'baja-odd', component: BajaOddComponent },
+    { path: 'listado-odd', component: ListaOddComponent },
+    { path: 'alta-odd', component: AltaOddComponent },
     { path: '**', component: PageNotFoundComponent },
     //{ path: 'oldPath', redirectTo: '/staticPath' },
     //{ path: ..., component: ..., data: { message: 'Custom' }

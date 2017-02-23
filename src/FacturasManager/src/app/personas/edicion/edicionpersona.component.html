@@ -1,19 +1,27 @@
-<listaseleccionablepersonas (onSelected)="mostrarpersonaseleccionada($event)"></listaseleccionablepersonas>
-<div class="card w-100">
-    <div class="card-block">
-        <h2 class="card-title">Edicion de Personas</h2>
-        <form>
-            <div class="form-group col-md-3">
+<listaseleccionablepersonas (onSelected)="mostrarpersonaseleccionada($event, content)"></listaseleccionablepersonas>
+<template ngbModalContainer></template>
+<template #content let-c="close" let-d="dismiss">
+  <div class="popover-right">
+  <div class="modal-header pop">
+    <h4 class="modal-title">Editar Datos Persona</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form>
+    <div class="modal-body">
+        <div class="card-block">        
+            <div class="form-group col-md-10">
                 <label for= "nombreyapellidoinput">Nombre y Apellido</label>
                 <input type="text" class="form-control" id="nombreyapellidoinput" 
                 placeholder="Nombre y Apellido" required [value]="personaSeleccionada ? personaSeleccionada.nombreyapellido : ''">
             </div>
-            <div class="form-group col-md-2">
+            <div class="form-group col-md-7">
                 <label for= "telefonoinput">Telefono</label>
                 <input type="text" class="form-control" id="telefonoinput" 
                 placeholder="Numero de telefono" required [value]="personaSeleccionada ? personaSeleccionada.telefono : ''">
             </div>
-            <div class="form-group col-md-3">
+            <div class="form-group col-md-10">
                 <legend class="col-form-legend">Objetos de deseo</legend>
                 <div class="form-check" *ngFor="let odd of listadoOdd">
                     <label class="form-check-label" >
@@ -21,10 +29,16 @@
                     </label>
                 </div>
             </div>            
-            <div class="form-group col-md-3">
+            <!--<div class="form-group col-md-10">
                 <input type="button" class="btn btn-secondary" value="Cancelar">
                 <input type="button" class="btn btn-primary" value="Modificar">
-            </div>            
-        </form>
+            </div>            -->        
+        </div>
     </div>
-</div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c()">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Modificar</button>
+    </div>
+  </form>
+  </div>          
+</template>

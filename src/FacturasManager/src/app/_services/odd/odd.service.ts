@@ -13,4 +13,12 @@ export class ODDService {
     getODDs() { 
         return this.objetosDeDeseo;
     }
+
+    getODDsByPersona(idPersona) { 
+        //TODO: servicio que trae los odds de una persona en particular
+    }
+
+    addODD(nombre: string) { 
+        //TODO: servicio que da de alta al odd
+    }
 }

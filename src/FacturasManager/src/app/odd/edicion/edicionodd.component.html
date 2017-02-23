@@ -1,0 +1,32 @@
+<listaseleccionablepersonasodd (onSelected)="mostraroddSeleccionado($event, content)"></listaseleccionablepersonasodd>
+<template ngbModalContainer></template>
+<template #content let-c="close" let-d="dismiss">
+  <div class="popover-right">
+  <div class="modal-header pop">
+    <h4 class="modal-title">Editar Datos Objeto de Deseo</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <form>
+    <div class="modal-body">
+        <div class="card-block">
+            
+                <div class="form-group col-md-8">
+                    <label for= "nombreyapellidoinput">Nombre</label>
+                    <input type="text" class="form-control" id="nombreinput" 
+                    placeholder="Nombre objeto de deseo" [value]="oddSeleccionado.nombre" required>
+                </div>
+                <!--<div class="form-group col-md-10">
+                    <input type="button" class="btn btn-secondary" value="Cancelar">
+                    <input type="button" class="btn btn-primary" value="Modificar">
+                </div>            -->        
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="c()">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Modificar</button>
+    </div>
+    </form>
+    </div>            
+</template>

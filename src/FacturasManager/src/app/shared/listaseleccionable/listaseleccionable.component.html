@@ -8,6 +8,7 @@
             <th>Nombre y Apellido</th>
             <th>Telefono</th>
             <th>Trae Facturas</th>
+            <th>Lo que Trae</th>
           </tr>
         </thead>
         <tbody>
@@ -16,6 +17,12 @@
             <td>{{persona.nombreyapellido}}</td>
             <td>{{persona.telefono}}</td>
             <td>{{persona.traeODD ? 'Sí' : 'No'}}</td>
+            <td>
+              <div *ngFor="let odd of persona.losOddQueTrae">
+                <span class="badge badge-success">{{odd.nombre}}</span>
+                <br>
+              </div>
+            </td>
           </tr>    
         </tbody>
       </table>

@@ -1,0 +1,19 @@
+<div class="card w-100">
+  <div class="card-block">
+    <h2 class="card-title">Listado de Objetos de Deseo</h2>
+      <table class="table table-hover">
+        <thead class="thead-inverse">
+          <tr>
+            <th>Identificador</th>
+            <th>Nombre</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="mouse-manito" *ngFor="let odd of listaOdd" (click)="mostrarseleccionada(odd)">        
+            <td>{{odd.id}}</td>
+            <td>{{odd.nombre}}</td>
+          </tr>    
+        </tbody>
+      </table>
+  </div>
+</div>

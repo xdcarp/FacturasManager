@@ -13,9 +13,6 @@ import { ODDService } from './_services/odd/odd.service';
 import { SidebarNavService } from './_services/sidebarNav/sidebarNav.service';
 import { ClickAfueraDirective } from './_directives/clickAfuera.directive';
 
-// import { PageNotFoundComponent } from './shared/pageNotFound/pageNotFound.component';
-// import { BackdropComponent } from './shared/backdrop/backdrop.component';
-
 import { MainNavBar } from './mainNavBar/mainNavBar.component';
 import { SidebarNav } from './sidebarNav/sidebarNav.component';
 import { Dashboard } from './dashboard/dashboard.component';
@@ -23,6 +20,7 @@ import { FooterNav } from './footerNav/footerNav.component';
 
 import { SharedModule } from './shared/shared.module';
 import { PersonaModule } from './personas/personas.module';
+import { ODDModule } from './odd/odd.module';
 
 @NgModule({
     imports: [
@@ -32,7 +30,8 @@ import { PersonaModule } from './personas/personas.module';
         NgbModule.forRoot(),
         AppRoutingModule,
         SharedModule,
-        PersonaModule
+        PersonaModule,
+        ODDModule
     ],
     declarations: [
         AppComponent,
