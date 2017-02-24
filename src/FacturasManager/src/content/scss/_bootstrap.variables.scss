@@ -1,3 +1,19 @@
-﻿$nav-pills-active-link-bg: #20627c;
+﻿$naranja-card:             #ec6424;
+$naranja-textos:           #613530;
+
+$body-color:               rgba($naranja-textos,1);
+
+$btn-secondary-color:      rgba($naranja-textos,1);
+
+$nav-pills-active-link-bg: rgba(#e87f46, .7);
 
 $card-spacer-y:            1.30rem;
+$card-border-width:        2.5px;
+$card-border-color:        rgba($naranja-card,.5);
+
+$navbar-inverse-color:     #fff;
+
+$headings-color:           rgba($naranja-textos,1);
+
+$table-inverse-color:       rgba(#f3eae8,1);
+$table-inverse-bg:          rgba(#886944,1);

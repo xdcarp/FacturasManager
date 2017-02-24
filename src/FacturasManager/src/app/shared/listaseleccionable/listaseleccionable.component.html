@@ -1,4 +1,4 @@
-<div class="card w-100">
+<div class="card w-75 centrar-tarjeta">
   <div class="card-block">
     <h2 class="card-title">Listado de Personas</h2>
       <table class="table table-hover">
@@ -19,7 +19,7 @@
             <td>{{persona.traeODD ? 'Sí' : 'No'}}</td>
             <td>
               <div *ngFor="let odd of persona.losOddQueTrae">
-                <span class="badge badge-success">{{odd.nombre}}</span>
+                <span class="badge etiqueta-odd">{{odd.nombre}}</span>
                 <br>
               </div>
             </td>
