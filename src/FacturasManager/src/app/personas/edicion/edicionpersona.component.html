@@ -1,4 +1,4 @@
-<listaseleccionablepersonas (onSelected)="mostrarpersonaseleccionada($event, content)"></listaseleccionablepersonas>
+<listaseleccionablepersonas [titulo] = "titulo" (onSelected)="mostrarpersonaseleccionada($event, content)"></listaseleccionablepersonas>
 <template ngbModalContainer></template>
 <template #content let-c="close" let-d="dismiss">
   <div class="popover-right">

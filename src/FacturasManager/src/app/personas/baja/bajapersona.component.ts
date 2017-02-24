@@ -15,6 +15,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class BajaPersonaComponent {
     
+    titulo: string = 'Eliminar Persona';
     personaSeleccionada: Persona = new Persona();
     listadoOdd: ODD[];    
 

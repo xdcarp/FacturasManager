@@ -10,6 +10,7 @@ import { ODD } from '../../_services/odd/odd';
 })
 export class BajaOddComponent {
     
+    titulo: string = 'Eliminar Objeto de Deseo';
     oddSeleccionado: ODD = new ODD();
 
     constructor(private oddService: ODDService, private modalService: NgbModal) {}

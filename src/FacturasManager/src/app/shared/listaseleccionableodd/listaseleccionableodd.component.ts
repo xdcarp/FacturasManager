@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { ODD } from '../../_services/odd/odd';
 import { ODDService } from '../../_services/odd/odd.service';
@@ -9,6 +9,7 @@ import { ODDService } from '../../_services/odd/odd.service';
 })
 export class ListaSeleccionableOddComponent {
     
+    @Input() titulo: string;
     @Output() onSelected = new EventEmitter<ODD>();
 
     listaOdd: ODD[];

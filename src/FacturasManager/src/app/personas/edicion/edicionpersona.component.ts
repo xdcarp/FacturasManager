@@ -15,6 +15,7 @@ import { ODDService } from '../../_services/odd/odd.service';
 })
 export class EdicionPersonaComponent {
     
+    titulo: string = 'Editar Datos de una Persona';
     personaSeleccionada: Persona;
     listadoOdd: ODD[];
 

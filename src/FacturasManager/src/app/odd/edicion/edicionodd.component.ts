@@ -13,6 +13,7 @@ import { ODDService } from '../../_services/odd/odd.service';
 })
 export class EdicionOddComponent {
     
+    titulo: string = 'Editar Datos de un Objeto de Deseo';
     oddSeleccionado: ODD;
     listadoOdd: ODD[];
 

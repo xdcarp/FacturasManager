@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "5bc34b1c6f00a6091c07"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "fbbabf444605f67d7458"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotMainModule = true; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -14695,6 +14695,7 @@ var BajaOddComponent = (function () {
     function BajaOddComponent(oddService, modalService) {
         this.oddService = oddService;
         this.modalService = modalService;
+        this.titulo = 'Eliminar Objeto de Deseo';
         this.oddSeleccionado = new odd_1.ODD();
     }
     BajaOddComponent.prototype.getdatosOddSeleccionada = function (odd, content) {
@@ -14736,6 +14737,7 @@ var EdicionOddComponent = (function () {
     function EdicionOddComponent(oddService, modalService) {
         this.oddService = oddService;
         this.modalService = modalService;
+        this.titulo = 'Editar Datos de un Objeto de Deseo';
         this.oddSeleccionado = new odd_1.ODD();
         this.listadoOdd = oddService.getODDs();
     }
@@ -14855,6 +14857,7 @@ var BajaPersonaComponent = (function () {
         this.personasService = personasService;
         this.oddService = oddService;
         this.modalService = modalService;
+        this.titulo = 'Eliminar Persona';
         this.personaSeleccionada = new persona_1.Persona();
         this.listadoOdd = oddService.getODDs();
     }
@@ -14899,6 +14902,7 @@ var EdicionPersonaComponent = (function () {
         this.personasService = personasService;
         this.oddService = oddService;
         this.modalService = modalService;
+        this.titulo = 'Editar Datos de una Persona';
         this.listadoOdd = oddService.getODDs();
     }
     EdicionPersonaComponent.prototype.mostrarpersonaseleccionada = function (personaSeleccionada, content) {
@@ -24164,6 +24168,10 @@ var ListaSeleccionablePersonasComponent = (function () {
     return ListaSeleccionablePersonasComponent;
 }());
 __decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], ListaSeleccionablePersonasComponent.prototype, "titulo", void 0);
+__decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], ListaSeleccionablePersonasComponent.prototype, "onSelected", void 0);
@@ -24205,6 +24213,10 @@ var ListaSeleccionableOddComponent = (function () {
     };
     return ListaSeleccionableOddComponent;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", String)
+], ListaSeleccionableOddComponent.prototype, "titulo", void 0);
 __decorate([
     core_1.Output(),
     __metadata("design:type", Object)
@@ -24661,13 +24673,13 @@ module.exports = "<div class=\"centrar-tarjeta\">\r\n    <div class=\"card\">   
 /* 257 */
 /***/ (function(module, exports) {
 
-module.exports = "<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Eliminar Objeto de Deseo</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <div class=\"card-block\">\r\n         <p>¿Desea Eliminar los datos de: <strong>{{oddSeleccionado.nombre}}</strong></p>    \r\n     </div>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n    <button type=\"button\" class=\"btn btn-secondary\">Borrar Datos</button>\r\n  </div>\r\n  </div>          \r\n</template>\r\n<listaseleccionablepersonasodd (onSelected)=\"getdatosOddSeleccionada($event, content)\"></listaseleccionablepersonasodd> \r\n";
+module.exports = "<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Eliminar Objeto de Deseo</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <div class=\"card-block\">\r\n         <p>¿Desea Eliminar los datos de: <strong>{{oddSeleccionado.nombre}}</strong></p>    \r\n     </div>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n    <button type=\"button\" class=\"btn btn-secondary\">Borrar Datos</button>\r\n  </div>\r\n  </div>          \r\n</template>\r\n<listaseleccionablepersonasodd [titulo] = \"titulo\" (onSelected)=\"getdatosOddSeleccionada($event, content)\"></listaseleccionablepersonasodd> \r\n";
 
 /***/ }),
 /* 258 */
 /***/ (function(module, exports) {
 
-module.exports = "<listaseleccionablepersonasodd (onSelected)=\"mostraroddSeleccionado($event, content)\"></listaseleccionablepersonasodd>\r\n<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Editar Datos Objeto de Deseo</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <form>\r\n    <div class=\"modal-body\">\r\n        <div class=\"card-block\">\r\n            \r\n                <div class=\"form-group col-md-8\">\r\n                    <label for= \"nombreyapellidoinput\">Nombre</label>\r\n                    <input type=\"text\" class=\"form-control\" id=\"nombreinput\" \r\n                    placeholder=\"Nombre objeto de deseo\" [value]=\"oddSeleccionado.nombre\" required>\r\n                </div>\r\n                <!--<div class=\"form-group col-md-10\">\r\n                    <input type=\"button\" class=\"btn btn-secondary\" value=\"Cancelar\">\r\n                    <input type=\"button\" class=\"btn btn-primary\" value=\"Modificar\">\r\n                </div>            -->        \r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary\">Modificar</button>\r\n    </div>\r\n    </form>\r\n    </div>            \r\n</template>";
+module.exports = "<listaseleccionablepersonasodd [titulo] = \"titulo\" (onSelected)=\"mostraroddSeleccionado($event, content)\"></listaseleccionablepersonasodd>\r\n<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Editar Datos Objeto de Deseo</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <form>\r\n    <div class=\"modal-body\">\r\n        <div class=\"card-block\">\r\n            \r\n                <div class=\"form-group col-md-8\">\r\n                    <label for= \"nombreyapellidoinput\">Nombre</label>\r\n                    <input type=\"text\" class=\"form-control\" id=\"nombreinput\" \r\n                    placeholder=\"Nombre objeto de deseo\" [value]=\"oddSeleccionado.nombre\" required>\r\n                </div>\r\n                <!--<div class=\"form-group col-md-10\">\r\n                    <input type=\"button\" class=\"btn btn-secondary\" value=\"Cancelar\">\r\n                    <input type=\"button\" class=\"btn btn-primary\" value=\"Modificar\">\r\n                </div>            -->        \r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary\">Modificar</button>\r\n    </div>\r\n    </form>\r\n    </div>            \r\n</template>";
 
 /***/ }),
 /* 259 */
@@ -24685,13 +24697,13 @@ module.exports = "<div class=\"centrar-tarjeta\">\r\n    <div class=\"card\">\r\
 /* 261 */
 /***/ (function(module, exports) {
 
-module.exports = "<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Eliminar Persona</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>¿Desea Eliminar los datos de: <strong>{{personaSeleccionada.nombreyapellido}}</strong></p>\r\n    <div class=\"card-block\">\r\n         <form>\r\n             <div class=\"form-group col-md-2\">\r\n                 <p class=\"card-text\">Teléfono: {{personaSeleccionada.telefono}}</p>\r\n             </div>            \r\n             <div class=\"form-group col-md-5\">\r\n                 <legend class=\"col-form-legend\">Objetos de deseo</legend>\r\n                 <div class=\"form-check\" *ngFor=\"let odd of listadoOdd\">\r\n                     <label class=\"form-check-label\" >\r\n                         <input class=\"form-check-input disabled\" type=\"checkbox\">{{odd.nombre}}\r\n                     </label>\r\n                 </div>\r\n             </div>                     \r\n         </form>\r\n     </div>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n    <button type=\"button\" class=\"btn btn-secondary\">Borrar Datos</button>\r\n  </div>\r\n  </div>          \r\n</template>\r\n<listaseleccionablepersonas (onSelected)=\"getdatosPersonaSeleccionada($event, content)\"></listaseleccionablepersonas> \r\n";
+module.exports = "<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Eliminar Persona</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <div class=\"modal-body\">\r\n    <p>¿Desea Eliminar los datos de: <strong>{{personaSeleccionada.nombreyapellido}}</strong></p>\r\n    <div class=\"card-block\">\r\n         <form>\r\n             <div class=\"form-group col-md-2\">\r\n                 <p class=\"card-text\">Teléfono: {{personaSeleccionada.telefono}}</p>\r\n             </div>            \r\n             <div class=\"form-group col-md-5\">\r\n                 <legend class=\"col-form-legend\">Objetos de deseo</legend>\r\n                 <div class=\"form-check\" *ngFor=\"let odd of listadoOdd\">\r\n                     <label class=\"form-check-label\" >\r\n                         <input class=\"form-check-input disabled\" type=\"checkbox\">{{odd.nombre}}\r\n                     </label>\r\n                 </div>\r\n             </div>                     \r\n         </form>\r\n     </div>\r\n  </div>\r\n  <div class=\"modal-footer\">\r\n    <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n    <button type=\"button\" class=\"btn btn-secondary\">Borrar Datos</button>\r\n  </div>\r\n  </div>          \r\n</template>\r\n<listaseleccionablepersonas [titulo] = \"titulo\" (onSelected)=\"getdatosPersonaSeleccionada($event, content)\"></listaseleccionablepersonas> \r\n";
 
 /***/ }),
 /* 262 */
 /***/ (function(module, exports) {
 
-module.exports = "<listaseleccionablepersonas (onSelected)=\"mostrarpersonaseleccionada($event, content)\"></listaseleccionablepersonas>\r\n<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Editar Datos Persona</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <form>\r\n    <div class=\"modal-body\">\r\n        <div class=\"card-block\">        \r\n            <div class=\"form-group col-md-10\">\r\n                <label for= \"nombreyapellidoinput\">Nombre y Apellido</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"nombreyapellidoinput\" \r\n                placeholder=\"Nombre y Apellido\" required [value]=\"personaSeleccionada ? personaSeleccionada.nombreyapellido : ''\">\r\n            </div>\r\n            <div class=\"form-group col-md-7\">\r\n                <label for= \"telefonoinput\">Telefono</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"telefonoinput\" \r\n                placeholder=\"Numero de telefono\" required [value]=\"personaSeleccionada ? personaSeleccionada.telefono : ''\">\r\n            </div>\r\n            <div class=\"form-group col-md-10\">\r\n                <legend class=\"col-form-legend\">Objetos de deseo</legend>\r\n                <div class=\"form-check\" *ngFor=\"let odd of listadoOdd\">\r\n                    <label class=\"form-check-label\" >\r\n                        <input class=\"form-check-input\" type=\"checkbox\"> {{odd.nombre}}\r\n                    </label>\r\n                </div>\r\n            </div>            \r\n            <!--<div class=\"form-group col-md-10\">\r\n                <input type=\"button\" class=\"btn btn-secondary\" value=\"Cancelar\">\r\n                <input type=\"button\" class=\"btn btn-primary\" value=\"Modificar\">\r\n            </div>            -->        \r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary\">Modificar</button>\r\n    </div>\r\n  </form>\r\n  </div>          \r\n</template>";
+module.exports = "<listaseleccionablepersonas [titulo] = \"titulo\" (onSelected)=\"mostrarpersonaseleccionada($event, content)\"></listaseleccionablepersonas>\r\n<template ngbModalContainer></template>\r\n<template #content let-c=\"close\" let-d=\"dismiss\">\r\n  <div class=\"popover-right\">\r\n  <div class=\"modal-header pop\">\r\n    <h4 class=\"modal-title\">Editar Datos Persona</h4>\r\n    <button type=\"button\" class=\"close\" aria-label=\"Close\" (click)=\"d()\">\r\n      <span aria-hidden=\"true\">&times;</span>\r\n    </button>\r\n  </div>\r\n  <form>\r\n    <div class=\"modal-body\">\r\n        <div class=\"card-block\">        \r\n            <div class=\"form-group col-md-10\">\r\n                <label for= \"nombreyapellidoinput\">Nombre y Apellido</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"nombreyapellidoinput\" \r\n                placeholder=\"Nombre y Apellido\" required [value]=\"personaSeleccionada ? personaSeleccionada.nombreyapellido : ''\">\r\n            </div>\r\n            <div class=\"form-group col-md-7\">\r\n                <label for= \"telefonoinput\">Telefono</label>\r\n                <input type=\"text\" class=\"form-control\" id=\"telefonoinput\" \r\n                placeholder=\"Numero de telefono\" required [value]=\"personaSeleccionada ? personaSeleccionada.telefono : ''\">\r\n            </div>\r\n            <div class=\"form-group col-md-10\">\r\n                <legend class=\"col-form-legend\">Objetos de deseo</legend>\r\n                <div class=\"form-check\" *ngFor=\"let odd of listadoOdd\">\r\n                    <label class=\"form-check-label\" >\r\n                        <input class=\"form-check-input\" type=\"checkbox\"> {{odd.nombre}}\r\n                    </label>\r\n                </div>\r\n            </div>            \r\n            <!--<div class=\"form-group col-md-10\">\r\n                <input type=\"button\" class=\"btn btn-secondary\" value=\"Cancelar\">\r\n                <input type=\"button\" class=\"btn btn-primary\" value=\"Modificar\">\r\n            </div>            -->        \r\n        </div>\r\n    </div>\r\n    <div class=\"modal-footer\">\r\n        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"c()\">Cancelar</button>\r\n        <button type=\"submit\" class=\"btn btn-secondary\">Modificar</button>\r\n    </div>\r\n  </form>\r\n  </div>          \r\n</template>";
 
 /***/ }),
 /* 263 */
@@ -24709,13 +24721,13 @@ module.exports = "<div *ngIf=\"isVisible\"  class=\"mi-backdrop\" (click)=\"onCl
 /* 265 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card w-75 centrar-tarjeta\">\r\n  <div class=\"card-block\">\r\n    <h2 class=\"card-title\">Listado de Personas</h2>\r\n      <table class=\"table table-hover\">\r\n        <thead class=\"thead-inverse\">\r\n          <tr>\r\n            <th>Identificador</th>\r\n            <th>Nombre y Apellido</th>\r\n            <th>Telefono</th>\r\n            <th>Trae Facturas</th>\r\n            <th>Lo que Trae</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr class=\"mouse-manito\" *ngFor=\"let persona of listaPersonas\" (click)=\"mostrarseleccionada(persona)\">        \r\n            <td>{{persona.id}}</td>\r\n            <td>{{persona.nombreyapellido}}</td>\r\n            <td>{{persona.telefono}}</td>\r\n            <td>{{persona.traeODD ? 'Sí' : 'No'}}</td>\r\n            <td>\r\n              <div *ngFor=\"let odd of persona.losOddQueTrae\">\r\n                <span class=\"badge etiqueta-odd\">{{odd.nombre}}</span>\r\n                <br>\r\n              </div>\r\n            </td>\r\n          </tr>    \r\n        </tbody>\r\n      </table>\r\n  </div>\r\n</div>";
+module.exports = "<div class=\"card w-75 centrar-tarjeta\">\r\n  <div class=\"card-block\">\r\n    <h2 class=\"card-title\">{{titulo}}</h2>\r\n      <table class=\"table table-hover\">\r\n        <thead class=\"thead-inverse\">\r\n          <tr>\r\n            <th>Identificador</th>\r\n            <th>Nombre y Apellido</th>\r\n            <th>Telefono</th>\r\n            <th>Trae Facturas</th>\r\n            <th>Lo que Trae</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr class=\"mouse-manito\" *ngFor=\"let persona of listaPersonas\" (click)=\"mostrarseleccionada(persona)\">        \r\n            <td>{{persona.id}}</td>\r\n            <td>{{persona.nombreyapellido}}</td>\r\n            <td>{{persona.telefono}}</td>\r\n            <td>{{persona.traeODD ? 'Sí' : 'No'}}</td>\r\n            <td>\r\n              <div *ngFor=\"let odd of persona.losOddQueTrae\">\r\n                <span class=\"badge etiqueta-odd\">{{odd.nombre}}</span>\r\n                <br>\r\n              </div>\r\n            </td>\r\n          </tr>    \r\n        </tbody>\r\n      </table>\r\n  </div>\r\n</div>";
 
 /***/ }),
 /* 266 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"card w-75 centrar-tarjeta\">\r\n  <div class=\"card-block\">\r\n    <h2 class=\"card-title\">Listado de Objetos de Deseo</h2>\r\n      <table class=\"table table-hover\">\r\n        <thead class=\"thead-inverse\">\r\n          <tr>\r\n            <th>Identificador</th>\r\n            <th>Nombre</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr class=\"mouse-manito\" *ngFor=\"let odd of listaOdd\" (click)=\"mostrarseleccionada(odd)\">        \r\n            <td>{{odd.id}}</td>\r\n            <td>{{odd.nombre}}</td>\r\n          </tr>    \r\n        </tbody>\r\n      </table>\r\n  </div>\r\n</div>";
+module.exports = "<div class=\"card w-75 centrar-tarjeta\">\r\n  <div class=\"card-block\">\r\n    <h2 class=\"card-title\">{{titulo}}</h2>\r\n      <table class=\"table table-hover\">\r\n        <thead class=\"thead-inverse\">\r\n          <tr>\r\n            <th>Identificador</th>\r\n            <th>Nombre</th>\r\n          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr class=\"mouse-manito\" *ngFor=\"let odd of listaOdd\" (click)=\"mostrarseleccionada(odd)\">        \r\n            <td>{{odd.id}}</td>\r\n            <td>{{odd.nombre}}</td>\r\n          </tr>    \r\n        </tbody>\r\n      </table>\r\n  </div>\r\n</div>";
 
 /***/ }),
 /* 267 */

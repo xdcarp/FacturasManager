@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { Persona } from '../../_services/personas/persona';
 import { PersonasService } from '../../_services/personas/personas.service';
@@ -9,6 +9,7 @@ import { PersonasService } from '../../_services/personas/personas.service';
 })
 export class ListaSeleccionablePersonasComponent {
     
+    @Input() titulo: string;
     @Output() onSelected = new EventEmitter<Persona>();
 
     listaPersonas: Persona[];
