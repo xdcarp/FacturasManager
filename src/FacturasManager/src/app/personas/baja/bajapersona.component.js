@@ -18,6 +18,7 @@ var BajaPersonaComponent = (function () {
         this.personasService = personasService;
         this.oddService = oddService;
         this.modalService = modalService;
+        this.titulo = 'Eliminar Persona';
         this.personaSeleccionada = new persona_1.Persona();
         this.listadoOdd = oddService.getODDs();
     }

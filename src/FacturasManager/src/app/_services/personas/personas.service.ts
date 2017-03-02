@@ -39,4 +39,9 @@ export class PersonasService {
     getPersonaById(idPersona) { }
 
     getPersonaByNombreyApellido(nombreyapellido) { }
+
+    getPersonasByLoQueTraen(oddAFiltrar?) {
+        //TODO: cambiar por la consulta al servicio que corresponda
+        return this.personas;
+     }
 }

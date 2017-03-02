@@ -9,28 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var odd_service_1 = require('../../_services/odd/odd.service');
-var odd_1 = require('../../_services/odd/odd');
-var BajaOddComponent = (function () {
-    function BajaOddComponent(oddService, modalService) {
+var ModificarPlanComponent = (function () {
+    function ModificarPlanComponent(oddService) {
         this.oddService = oddService;
-        this.modalService = modalService;
-        this.titulo = 'Eliminar Objeto de Deseo';
-        this.oddSeleccionado = new odd_1.ODD();
+        this.listaOdds = [];
+        this.listaOdds = oddService.getODDs();
     }
-    BajaOddComponent.prototype.getdatosOddSeleccionada = function (odd, content) {
-        this.oddSeleccionado = odd;
-        this.modalService.open(content);
-    };
-    BajaOddComponent = __decorate([
+    ModificarPlanComponent = __decorate([
         core_1.Component({
-            selector: 'bajaodd',
-            template: require('./bajaodd.component.html')
+            selector: 'modificarplan',
+            template: require('./modificarplan.component.html')
         }), 
-        __metadata('design:paramtypes', [odd_service_1.ODDService, ng_bootstrap_1.NgbModal])
-    ], BajaOddComponent);
-    return BajaOddComponent;
+        __metadata('design:paramtypes', [odd_service_1.ODDService])
+    ], ModificarPlanComponent);
+    return ModificarPlanComponent;
 }());
-exports.BajaOddComponent = BajaOddComponent;
-//# sourceMappingURL=bajaodd.component.js.map
+exports.ModificarPlanComponent = ModificarPlanComponent;
+//# sourceMappingURL=modificarplan.component.js.map

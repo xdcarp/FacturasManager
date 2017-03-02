@@ -13,6 +13,7 @@ var platform_browser_1 = require('@angular/platform-browser');
 var common_1 = require('@angular/common');
 var material_1 = require('@angular/material');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
+var ng2_dnd_1 = require('ng2-dnd');
 var app_component_1 = require('./app.component');
 var app_routing_module_1 = require('./app-routing.module');
 var menu_service_1 = require('./_services/menu.service');
@@ -27,6 +28,7 @@ var footerNav_component_1 = require('./footerNav/footerNav.component');
 var shared_module_1 = require('./shared/shared.module');
 var personas_module_1 = require('./personas/personas.module');
 var odd_module_1 = require('./odd/odd.module');
+var plan_module_1 = require('./plan/plan.module');
 var AppModule = (function () {
     function AppModule() {
     }
@@ -37,10 +39,12 @@ var AppModule = (function () {
                 common_1.CommonModule,
                 material_1.MaterialModule.forRoot(),
                 ng_bootstrap_1.NgbModule.forRoot(),
+                ng2_dnd_1.DndModule.forRoot(),
                 app_routing_module_1.AppRoutingModule,
                 shared_module_1.SharedModule,
                 personas_module_1.PersonaModule,
-                odd_module_1.ODDModule
+                odd_module_1.ODDModule,
+                plan_module_1.PlanModule
             ],
             declarations: [
                 app_component_1.AppComponent,

@@ -10,6 +10,9 @@ import '@angular/router';
 // RxJS
 import 'rxjs';
 
+//dragula
+import 'dragula/dist/dragula.css';
+
 //import 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 //import 'ng2-bootstrap/datepicker';
 

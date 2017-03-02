@@ -2,7 +2,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '@angular/material';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DndModule } from 'ng2-dnd';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -21,6 +22,7 @@ import { FooterNav } from './footerNav/footerNav.component';
 import { SharedModule } from './shared/shared.module';
 import { PersonaModule } from './personas/personas.module';
 import { ODDModule } from './odd/odd.module';
+import { PlanModule } from './plan/plan.module';
 
 @NgModule({
     imports: [
@@ -28,10 +30,12 @@ import { ODDModule } from './odd/odd.module';
         CommonModule,
         MaterialModule.forRoot(),
         NgbModule.forRoot(),
+        DndModule.forRoot(),
         AppRoutingModule,
         SharedModule,
         PersonaModule,
-        ODDModule
+        ODDModule,
+        PlanModule
     ],
     declarations: [
         AppComponent,

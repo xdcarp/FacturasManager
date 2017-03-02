@@ -20,6 +20,10 @@ var ListaSeleccionablePersonasComponent = (function () {
         this.onSelected.emit(persona);
     };
     __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ListaSeleccionablePersonasComponent.prototype, "titulo", void 0);
+    __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], ListaSeleccionablePersonasComponent.prototype, "onSelected", void 0);

@@ -54,7 +54,7 @@ gulp.task('clean', ["css:clean", "fonts:clean", "index:clean", "app:clean", "pol
 });
 
 
-gulp.task('sass:build', ["css:clean"], function () {
+gulp.task('sass:build', ["css:clean", "dndcss:build"], function () {
     return gulp
         .src('./src/content/scss/site.scss')
         .pipe(sourcemaps.init())
@@ -69,6 +69,11 @@ gulp.task('fonts:build', ["fonts:clean"], function () {
     .pipe(gulp.dest(path.join("wwwroot", '/fonts/')));
 });
 
+gulp.task('dndcss:build', ["css:clean"], function () {
+    return gulp.src(['./node_modules/ng2-dnd/style.css'])
+    .pipe(gulp.dest(path.join("wwwroot", '/css/')));
+});
+
 gulp.task('img:build', ["img:clean"], function () {
     return gulp.src('./src/content/img/**/*.*')
             .pipe(gulp.dest(path.join("wwwroot", '/img/')));
@@ -81,7 +86,7 @@ gulp.task("index:build", ["index:clean"], function () {
 });
 
 
-gulp.task('build', ["sass:build", "fonts:build", "img:build", "index:build"], function () {
+gulp.task('build', ["sass:build", "fonts:build", "img:build", "index:build", "dndcss:build"], function () {
 
 });
 

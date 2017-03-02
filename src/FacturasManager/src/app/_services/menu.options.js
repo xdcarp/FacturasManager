@@ -13,7 +13,7 @@ var MenuPrincipal = (function () {
         },
         {
             "idMenu": 3, "name": 'Plan', "opciones": ['Ver Plan', 'Modificar Plan'],
-            "rutas": ['', '']
+            "rutas": ['/ver-plan', '/modificar-plan']
         }
     ];
     return MenuPrincipal;

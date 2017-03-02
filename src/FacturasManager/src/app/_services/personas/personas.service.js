@@ -40,6 +40,10 @@ var PersonasService = (function () {
     };
     PersonasService.prototype.getPersonaById = function (idPersona) { };
     PersonasService.prototype.getPersonaByNombreyApellido = function (nombreyapellido) { };
+    PersonasService.prototype.getPersonasByLoQueTraen = function (oddAFiltrar) {
+        //TODO: cambiar por la consulta al servicio que corresponda
+        return this.personas;
+    };
     PersonasService = __decorate([
         core_1.Injectable(), 
         __metadata('design:paramtypes', [odd_service_1.ODDService])

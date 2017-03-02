@@ -20,6 +20,10 @@ var ListaSeleccionableOddComponent = (function () {
         this.onSelected.emit(odd);
     };
     __decorate([
+        core_1.Input(), 
+        __metadata('design:type', String)
+    ], ListaSeleccionableOddComponent.prototype, "titulo", void 0);
+    __decorate([
         core_1.Output(), 
         __metadata('design:type', Object)
     ], ListaSeleccionableOddComponent.prototype, "onSelected", void 0);

@@ -9,6 +9,8 @@ require('@angular/http');
 require('@angular/router');
 // RxJS
 require('rxjs');
+//dragula
+require('dragula/dist/dragula.css');
 //import 'angular-2-dropdown-multiselect/src/multiselect-dropdown';
 //import 'ng2-bootstrap/datepicker';
 //require("chart.js/src/chart.js")

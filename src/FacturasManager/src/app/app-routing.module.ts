@@ -10,9 +10,12 @@ import { ListaOddComponent } from './odd/lista/listaodd.component';
 import { AltaOddComponent } from './odd/alta/altaodd.component';
 import { EdicionOddComponent } from './odd/edicion/edicionodd.component';
 import { BajaOddComponent } from './odd/baja/bajaodd.component'
+import { ModificarPlanComponent } from './plan/modificar/modificarplan.component';
+import { VerPlanComponent } from './plan/verplan/verplan.component';
+
 
 const routes: Routes = [
-    { path: '', component: ListaPersonasComponent },
+    { path: '', component: VerPlanComponent },
     { path: 'listado-personas', component: ListaPersonasComponent },
     { path: 'alta-persona', component: AltaPersonaComponent },
     { path: 'editar-persona', component: EdicionPersonaComponent },
@@ -21,7 +24,9 @@ const routes: Routes = [
     { path: 'baja-odd', component: BajaOddComponent },
     { path: 'listado-odd', component: ListaOddComponent },
     { path: 'alta-odd', component: AltaOddComponent },
-    { path: '**', component: PageNotFoundComponent },
+    { path: 'ver-plan', component: VerPlanComponent },
+    { path: 'modificar-plan', component: ModificarPlanComponent },
+    { path: '**', component: PageNotFoundComponent }
     //{ path: 'oldPath', redirectTo: '/staticPath' },
     //{ path: ..., component: ..., data: { message: 'Custom' }
 ];

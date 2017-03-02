@@ -19,8 +19,10 @@ var listaodd_component_1 = require('./odd/lista/listaodd.component');
 var altaodd_component_1 = require('./odd/alta/altaodd.component');
 var edicionodd_component_1 = require('./odd/edicion/edicionodd.component');
 var bajaodd_component_1 = require('./odd/baja/bajaodd.component');
+var modificarplan_component_1 = require('./plan/modificar/modificarplan.component');
+var verplan_component_1 = require('./plan/verplan/verplan.component');
 var routes = [
-    { path: '', component: listapersonas_component_1.ListaPersonasComponent },
+    { path: '', component: verplan_component_1.VerPlanComponent },
     { path: 'listado-personas', component: listapersonas_component_1.ListaPersonasComponent },
     { path: 'alta-persona', component: altapersona_component_1.AltaPersonaComponent },
     { path: 'editar-persona', component: edicionpersona_component_1.EdicionPersonaComponent },
@@ -29,7 +31,9 @@ var routes = [
     { path: 'baja-odd', component: bajaodd_component_1.BajaOddComponent },
     { path: 'listado-odd', component: listaodd_component_1.ListaOddComponent },
     { path: 'alta-odd', component: altaodd_component_1.AltaOddComponent },
-    { path: '**', component: pageNotFound_component_1.PageNotFoundComponent },
+    { path: 'ver-plan', component: verplan_component_1.VerPlanComponent },
+    { path: 'modificar-plan', component: modificarplan_component_1.ModificarPlanComponent },
+    { path: '**', component: pageNotFound_component_1.PageNotFoundComponent }
 ];
 var AppRoutingModule = (function () {
     function AppRoutingModule() {

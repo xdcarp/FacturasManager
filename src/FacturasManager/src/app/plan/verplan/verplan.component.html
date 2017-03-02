@@ -1,0 +1,28 @@
+<div class="centrar-tarjeta">
+    <div class="card">
+        <div class="card-block">
+            <h2 class="card-title">Ver Plan</h2>
+            <div ngbDropdown class="d-inline-block">
+                <button class="btn btn-outline-info" id="dropdownMenu1" ngbDropdownToggle>Objetos de Deseo</button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                    <button class="dropdown-item" *ngFor="let odd of listaOdds" >{{odd.nombre}}</button>
+                </div>
+            </div>            
+        </div>
+    </div>
+    <!--dnd-->
+    <div class="card">
+        <div class="card-block">
+            <h2 class="card-title">Ver Plan</h2>
+            <div class="card-block" dnd-draggable [dragEnabled]="true" style="background-color: red">
+                <div>Drag Me</div>               
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div dnd-droppable class="card-block" (onDropSuccess)="simpleDrop=$event">
+            <h2 class="card-title">Place to drop</h2>
+            <div *ngIf="simpleDrop" style="background-color: purple; color: white;">Item was dropped here</div> 
+        </div>
+    </div>
+</div>

@@ -16,6 +16,7 @@ var EdicionOddComponent = (function () {
     function EdicionOddComponent(oddService, modalService) {
         this.oddService = oddService;
         this.modalService = modalService;
+        this.titulo = 'Editar Datos de un Objeto de Deseo';
         this.oddSeleccionado = new odd_1.ODD();
         this.listadoOdd = oddService.getODDs();
     }

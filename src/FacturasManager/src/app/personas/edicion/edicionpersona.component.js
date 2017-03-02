@@ -17,6 +17,7 @@ var EdicionPersonaComponent = (function () {
         this.personasService = personasService;
         this.oddService = oddService;
         this.modalService = modalService;
+        this.titulo = 'Editar Datos de una Persona';
         this.listadoOdd = oddService.getODDs();
     }
     EdicionPersonaComponent.prototype.mostrarpersonaseleccionada = function (personaSeleccionada, content) {
