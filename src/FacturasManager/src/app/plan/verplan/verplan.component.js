@@ -11,17 +11,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var odd_service_1 = require('../../_services/odd/odd.service');
 var personas_service_1 = require('../../_services/personas/personas.service');
-var persona_1 = require('../../_services/personas/persona');
 var VerPlanComponent = (function () {
     function VerPlanComponent(oddService, personaService) {
         this.oddService = oddService;
         this.personaService = personaService;
-        this.simpleDrop = null;
         this.listaOdds = [];
         this.listadoPersonas = [];
-        this.listadoPersonasQueDejanDeTraer = [
-            new persona_1.Persona(0, "Ninguno")
-        ];
+        this.listadoPersonasQueDejanDeTraer = [];
         this.listaOdds = oddService.getODDs();
         this.listadoPersonas = personaService.getPersonasByLoQueTraen();
     }

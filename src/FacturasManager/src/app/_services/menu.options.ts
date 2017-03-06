@@ -10,8 +10,8 @@ export class MenuPrincipal {
         "rutas": ['/alta-odd', '/baja-odd', '/editar-odd', '/listado-odd']
       },
       {
-        "idMenu": 3, "name": 'Plan', "opciones": ['Ver Plan', 'Modificar Plan'],
-        "rutas": ['/ver-plan', '/modificar-plan']
+        "idMenu": 3, "name": 'Plan', "opciones": ['Ver Plan'],
+        "rutas": ['/ver-plan']
       }
     ];
 }

@@ -12,14 +12,12 @@ import { Persona } from '../../_services/personas/persona';
     selector: 'verplan',
     template: require('./verplan.component.html')
 })
-export class VerPlanComponent {    
-    
-    simpleDrop: any = null;
+export class VerPlanComponent {   
+   
     listaOdds: ODD[] = [];
     listadoPersonas: Persona[] = [];
-    listadoPersonasQueDejanDeTraer: Persona[] = [
-        new Persona(0, "Ninguno")
-    ];
+    listadoPersonasQueDejanDeTraer: Persona[] = [];
+    mostrarBotones: boolean = false;
 
     constructor(private oddService: ODDService, private personaService: PersonasService) { 
         this.listaOdds = oddService.getODDs();

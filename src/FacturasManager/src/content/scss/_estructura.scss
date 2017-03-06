@@ -60,9 +60,50 @@ h1 {
   background-color: #d0a471;
 }
 
-.seccion{
-  padding-top: 20px;
+/*********DropDown***************/
+
+.dropdown-toggle{
+  background-color: transparent;
+  border-color: #c59860;
+}
+
+/**********Panel****************/
+.panel {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 2.5px solid #f6b292;
+    border-radius: 7px;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+
+.panel-seccion{
   padding-left: 10px;
+  padding-right: 10px;
+}
+
+.panel-heading {
+    color: #8a6d3b;
+    background-color: #fcf8e3;
+    border: 2px solid #f6b292;
+    border-color: #faebcc;
+    border-top-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;    
+}
+
+.panel-interno{
+  padding: 15px;
+}
+
+.panel-interno-seccion{
+  padding: 15px;
+  width: 50%;
+}
+
+.panel-botones{
+  padding: 15px;  
 }
 
 /*************backdrop***********/

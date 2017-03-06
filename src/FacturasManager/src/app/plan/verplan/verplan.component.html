@@ -1,28 +1,51 @@
-<div class="centrar-tarjeta">
-    <div class="card">
-        <div class="card-block">
-            <h2 class="card-title">Ver Plan</h2>
-            <div ngbDropdown class="d-inline-block">
-                <button class="btn btn-outline-info" id="dropdownMenu1" ngbDropdownToggle>Objetos de Deseo</button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                    <button class="dropdown-item" *ngFor="let odd of listaOdds" >{{odd.nombre}}</button>
-                </div>
-            </div>            
-        </div>
-    </div>
-    <!--dnd-->
-    <div class="card">
-        <div class="card-block">
-            <h2 class="card-title">Ver Plan</h2>
-            <div class="card-block" dnd-draggable [dragEnabled]="true" style="background-color: red">
-                <div>Drag Me</div>               
+<form>
+    <div class="panel-seccion form-group">
+        <div class="panel">
+            <h2 class="panel-heading">Plan</h2>
+            <div class="card-block">            
+                <div ngbDropdown class="d-inline-block">
+                    <button class="btn btn-outline-primary" id="dropdownMenu1" ngbDropdownToggle>Objetos de Deseo</button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <button class="dropdown-item" *ngFor="let odd of listaOdds" >{{odd.nombre}}</button>
+                    </div>
+                </div>            
             </div>
-        </div>
-    </div>
-    <div class="card">
-        <div dnd-droppable class="card-block" (onDropSuccess)="simpleDrop=$event">
-            <h2 class="card-title">Place to drop</h2>
-            <div *ngIf="simpleDrop" style="background-color: purple; color: white;">Item was dropped here</div> 
-        </div>
-    </div>
-</div>
+            <!--dnd-->       
+            <div class="panel-seccion">
+                <div class="row">
+                    <div class="panel-interno-seccion">            
+                        <div class="panel">
+                            <h2 class="panel-heading">Planeado</h2>
+                            <div class="panel-interno">                
+                                <div dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listadoPersonas">
+                                    <ul class="list-group">
+                                        <li *ngFor="let persona of listadoPersonas; let i = index" class="list-group-item"
+                                            dnd-sortable [sortableIndex]="i">{{persona.nombreyapellido}}</li>
+                                    </ul>               
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-interno-seccion">
+                        <div class="panel">
+                            <h2 class="panel-heading">Dejan de Traer</h2>
+                            <div class="panel-interno" dnd-sortable-container [dropZones]="['boxers-zone']" [sortableData]="listadoPersonasQueDejanDeTraer">
+                                <ul class="list-group">
+                                    <li *ngFor="let personaNoTrae of listadoPersonasQueDejanDeTraer; let i = index" 
+                                    class="list-group-item" dnd-sortable [sortableIndex]="i">
+                                        {{personaNoTrae.nombreyapellido}}
+                                    </li>
+                                </ul> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-botones" *ngIf="listadoPersonasQueDejanDeTraer.length > 0">
+                <input type="button" class="btn btn-secondary" value="Cancelar">
+                <button type="submit" class="btn btn-secondary">Grabar Cambios</button>               
+            </div>        
+        </div>    
+    </div>    
+</form>
+

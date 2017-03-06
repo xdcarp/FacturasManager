@@ -13,12 +13,10 @@ import { ODD } from '../_services/odd/odd';
 import { PersonasService } from '../_services/personas/personas.service';
 import { ODDService } from '../_services/odd/odd.service';
 
-import { ModificarPlanComponent } from './modificar/modificarplan.component';
 import { VerPlanComponent } from './verplan/verplan.component';
 
 @NgModule({
     declarations: [
-        ModificarPlanComponent,
         VerPlanComponent
         ],
     imports: [

@@ -11,6 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
 var platform_browser_1 = require('@angular/platform-browser');
+var forms_1 = require('@angular/forms');
 var common_1 = require('@angular/common');
 var ng2_dnd_1 = require('ng2-dnd');
 var shared_module_1 = require('../shared/shared.module');
@@ -29,6 +30,7 @@ var PlanModule = (function () {
             ],
             imports: [
                 platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
                 common_1.CommonModule,
                 ng_bootstrap_1.NgbModule,
                 shared_module_1.SharedModule,
