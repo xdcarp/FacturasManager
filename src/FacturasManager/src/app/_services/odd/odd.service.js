@@ -9,18 +9,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var configuration_1 = require('../../shared/configuration');
 var odd_1 = require('./odd');
 var ODDService = (function () {
-    function ODDService() {
+    function ODDService(_http, configuration) {
+        var _this = this;
+        this._http = _http;
+        this.configuration = configuration;
+        /*Urls Api */
+        this.getByIdUrl = '/GetById/';
         this.objetosDeDeseo = [
             new odd_1.ODD(1, 'Facturas'),
             new odd_1.ODD(2, 'Yerba'),
             new odd_1.ODD(3, 'Café')
         ];
+        this.getODDs = function () {
+            return _this._http.get(_this.configuration.ServerWithApiUrl)
+                .map(function (data) { return data.json(); });
+        };
+        this.getOddById = function (id) {
+            return _this._http.get(_this.configuration.ServerWithApiUrl + _this.getByIdUrl + id)
+                .map(function (data) { return data.json(); });
+        };
     }
-    ODDService.prototype.getODDs = function () {
-        return this.objetosDeDeseo;
-    };
     ODDService.prototype.getODDsByPersona = function (idPersona) {
         //TODO: servicio que trae los odds de una persona en particular
     };
@@ -29,7 +42,7 @@ var ODDService = (function () {
     };
     ODDService = __decorate([
         core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http, configuration_1.Configuration])
     ], ODDService);
     return ODDService;
 }());

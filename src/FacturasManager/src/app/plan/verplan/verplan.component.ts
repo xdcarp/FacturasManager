@@ -20,7 +20,12 @@ export class VerPlanComponent {
     mostrarBotones: boolean = false;
 
     constructor(private oddService: ODDService, private personaService: PersonasService) { 
-        this.listaOdds = oddService.getODDs();
+        //this.listaOdds = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe((data: ODD[]) => this.listaOdds = data,
+            error => console.log(error),
+            () => console.log("getODDs() complete from constructor"));
         this.listadoPersonas = personaService.getPersonasByLoQueTraen();        
     }    
 }

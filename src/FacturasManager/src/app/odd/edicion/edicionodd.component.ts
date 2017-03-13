@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 
 import { ODD } from '../../_services/odd/odd';
 
@@ -20,7 +22,11 @@ export class EdicionOddComponent {
     constructor(private oddService: ODDService,
     private modalService: NgbModal) {
         this.oddSeleccionado = new ODD();
-        this.listadoOdd = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe((data: ODD[]) => this.listadoOdd = data,
+            error => console.log(error),
+            () => console.log("getODDs() complete from constructor"));;
     }
 
     mostraroddSeleccionado(oddSeleccionado: ODD, content) {

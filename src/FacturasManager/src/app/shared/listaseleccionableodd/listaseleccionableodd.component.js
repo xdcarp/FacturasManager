@@ -12,9 +12,13 @@ var core_1 = require('@angular/core');
 var odd_service_1 = require('../../_services/odd/odd.service');
 var ListaSeleccionableOddComponent = (function () {
     function ListaSeleccionableOddComponent(servicioOdd) {
+        var _this = this;
         this.servicioOdd = servicioOdd;
         this.onSelected = new core_1.EventEmitter();
-        this.listaOdd = servicioOdd.getODDs();
+        //this.listaOdd = servicioOdd.getODDs();
+        servicioOdd
+            .getODDs()
+            .subscribe(function (data) { return _this.listaOdd = data; }, function (error) { return console.log(error); }, function () { return console.log("getODDs() complete from constructor"); });
     }
     ListaSeleccionableOddComponent.prototype.mostrarseleccionada = function (odd) {
         this.onSelected.emit(odd);

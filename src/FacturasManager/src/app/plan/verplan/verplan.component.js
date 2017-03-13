@@ -13,12 +13,17 @@ var odd_service_1 = require('../../_services/odd/odd.service');
 var personas_service_1 = require('../../_services/personas/personas.service');
 var VerPlanComponent = (function () {
     function VerPlanComponent(oddService, personaService) {
+        var _this = this;
         this.oddService = oddService;
         this.personaService = personaService;
         this.listaOdds = [];
         this.listadoPersonas = [];
         this.listadoPersonasQueDejanDeTraer = [];
-        this.listaOdds = oddService.getODDs();
+        this.mostrarBotones = false;
+        //this.listaOdds = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe(function (data) { return _this.listaOdds = data; }, function (error) { return console.log(error); }, function () { return console.log("getODDs() complete from constructor"); });
         this.listadoPersonas = personaService.getPersonasByLoQueTraen();
     }
     VerPlanComponent = __decorate([

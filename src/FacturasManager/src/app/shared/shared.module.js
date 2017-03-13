@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var common_1 = require('@angular/common');
+var configuration_1 = require('./configuration');
 var backdrop_service_1 = require('../_services/backdrop/backdrop.service');
 var pageNotFound_component_1 = require('../shared/pageNotFound/pageNotFound.component');
 var backdrop_component_1 = require('../shared/backdrop/backdrop.component');
@@ -33,7 +34,7 @@ var SharedModule = (function () {
                 listaseleccionable_component_1.ListaSeleccionablePersonasComponent,
                 listaseleccionableodd_component_1.ListaSeleccionableOddComponent
             ],
-            providers: [backdrop_service_1.BackdropService]
+            providers: [backdrop_service_1.BackdropService, configuration_1.Configuration]
         }), 
         __metadata('design:paramtypes', [])
     ], SharedModule);

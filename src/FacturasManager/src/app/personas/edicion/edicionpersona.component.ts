@@ -21,7 +21,12 @@ export class EdicionPersonaComponent {
 
     constructor(private personasService: PersonasService, private oddService: ODDService,
     private modalService: NgbModal) {
-        this.listadoOdd = oddService.getODDs();
+        //this.listadoOdd = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe((data: ODD[]) => this.listadoOdd = data,
+            error => console.log(error),
+            () => console.log("getODDs() complete from constructor"));
     }
 
     mostrarpersonaseleccionada(personaSeleccionada: Persona, content) {

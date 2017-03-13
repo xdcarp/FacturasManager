@@ -17,7 +17,6 @@ var ng2_dnd_1 = require('ng2-dnd');
 var shared_module_1 = require('../shared/shared.module');
 var personas_service_1 = require('../_services/personas/personas.service');
 var odd_service_1 = require('../_services/odd/odd.service');
-var modificarplan_component_1 = require('./modificar/modificarplan.component');
 var verplan_component_1 = require('./verplan/verplan.component');
 var PlanModule = (function () {
     function PlanModule() {
@@ -25,7 +24,6 @@ var PlanModule = (function () {
     PlanModule = __decorate([
         core_1.NgModule({
             declarations: [
-                modificarplan_component_1.ModificarPlanComponent,
                 verplan_component_1.VerPlanComponent
             ],
             imports: [

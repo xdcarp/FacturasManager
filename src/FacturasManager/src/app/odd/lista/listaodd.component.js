@@ -10,11 +10,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var odd_service_1 = require('../../_services/odd/odd.service');
+var odd_1 = require('../../_services/odd/odd');
 var ListaOddComponent = (function () {
     function ListaOddComponent(oddService) {
+        var _this = this;
         this.oddService = oddService;
         this.listaOdds = [];
-        this.listaOdds = oddService.getODDs();
+        this.oddByIdTest = new odd_1.ODD();
+        //this.listaOdds = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe(function (data) { return _this.listaOdds = data; }, function (error) { return console.log(error); }, function () { return console.log("getODDs() complete from constructor"); });
+        oddService
+            .getOddById(1)
+            .subscribe(function (data) { return _this.oddByIdTest = data; }, function (error) { return console.log(error); }, function () { return console.log("getODDs() complete from constructor"); });
     }
     ListaOddComponent = __decorate([
         core_1.Component({

@@ -12,6 +12,7 @@ import { MenuesService } from './_services/menu.service';
 import { PersonasService } from './_services/personas/personas.service';
 import { ODDService } from './_services/odd/odd.service';
 import { SidebarNavService } from './_services/sidebarNav/sidebarNav.service';
+import { Configuration } from './shared/configuration';
 import { ClickAfueraDirective } from './_directives/clickAfuera.directive';
 
 import { MainNavBar } from './mainNavBar/mainNavBar.component';
@@ -45,7 +46,7 @@ import { PlanModule } from './plan/plan.module';
         FooterNav,        
         ClickAfueraDirective        
     ],
-    providers: [MenuesService, PersonasService, ODDService, SidebarNavService],
+    providers: [MenuesService, PersonasService, ODDService, SidebarNavService, Configuration],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

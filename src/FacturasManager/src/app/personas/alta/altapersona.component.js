@@ -13,9 +13,13 @@ var personas_service_1 = require('../../_services/personas/personas.service');
 var odd_service_1 = require('../../_services/odd/odd.service');
 var AltaPersonaComponent = (function () {
     function AltaPersonaComponent(personasService, oddService) {
+        var _this = this;
         this.personasService = personasService;
         this.oddService = oddService;
-        this.listadoOdd = oddService.getODDs();
+        //this.listadoOdd = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe(function (data) { return _this.listadoOdd = data; }, function (error) { return console.log(error); }, function () { return console.log("getODDs() complete from constructor"); });
     }
     AltaPersonaComponent.prototype.addNewPersona = function () {
         //TODO: llamar al servicio de personas y darla de alta

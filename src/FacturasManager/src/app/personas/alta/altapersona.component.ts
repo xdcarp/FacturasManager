@@ -14,7 +14,12 @@ export class AltaPersonaComponent  {
     public listadoOdd: ODD[];
 
     constructor(private personasService: PersonasService, private oddService: ODDService) {
-       this.listadoOdd = oddService.getODDs();
+       //this.listadoOdd = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe((data: ODD[]) => this.listadoOdd = data,
+            error => console.log(error),
+            () => console.log("getODDs() complete from constructor"));
      }
     
     addNewPersona() {

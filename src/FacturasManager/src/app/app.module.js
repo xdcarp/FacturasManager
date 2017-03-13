@@ -20,6 +20,7 @@ var menu_service_1 = require('./_services/menu.service');
 var personas_service_1 = require('./_services/personas/personas.service');
 var odd_service_1 = require('./_services/odd/odd.service');
 var sidebarNav_service_1 = require('./_services/sidebarNav/sidebarNav.service');
+var configuration_1 = require('./shared/configuration');
 var clickAfuera_directive_1 = require('./_directives/clickAfuera.directive');
 var mainNavBar_component_1 = require('./mainNavBar/mainNavBar.component');
 var sidebarNav_component_1 = require('./sidebarNav/sidebarNav.component');
@@ -54,7 +55,7 @@ var AppModule = (function () {
                 footerNav_component_1.FooterNav,
                 clickAfuera_directive_1.ClickAfueraDirective
             ],
-            providers: [menu_service_1.MenuesService, personas_service_1.PersonasService, odd_service_1.ODDService, sidebarNav_service_1.SidebarNavService],
+            providers: [menu_service_1.MenuesService, personas_service_1.PersonasService, odd_service_1.ODDService, sidebarNav_service_1.SidebarNavService, configuration_1.Configuration],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

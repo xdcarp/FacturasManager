@@ -15,7 +15,12 @@ export class ListaSeleccionableOddComponent {
     listaOdd: ODD[];
 
     constructor(private servicioOdd: ODDService) { 
-        this.listaOdd = servicioOdd.getODDs();
+        //this.listaOdd = servicioOdd.getODDs();
+        servicioOdd
+            .getODDs()
+            .subscribe((data: ODD[]) => this.listaOdd = data,
+            error => console.log(error),
+            () => console.log("getODDs() complete from constructor"));
     }
 
     mostrarseleccionada(odd: ODD) { 

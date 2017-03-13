@@ -1,6 +1,8 @@
 import { NgModule, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { Configuration } from './configuration';
+
 import { BackdropService } from '../_services/backdrop/backdrop.service';
 
 import { PageNotFoundComponent } from '../shared/pageNotFound/pageNotFound.component';
@@ -22,6 +24,6 @@ import { ListaSeleccionableOddComponent } from '../shared/listaseleccionableodd/
         ListaSeleccionablePersonasComponent,
         ListaSeleccionableOddComponent
     ],
-    providers: [BackdropService]
+    providers: [BackdropService, Configuration]
 })
 export class SharedModule {}

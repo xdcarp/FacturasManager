@@ -10,15 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require('@angular/core');
 var ng_bootstrap_1 = require('@ng-bootstrap/ng-bootstrap');
+require('rxjs/add/operator/map');
+require('rxjs/add/operator/catch');
 var odd_1 = require('../../_services/odd/odd');
 var odd_service_1 = require('../../_services/odd/odd.service');
 var EdicionOddComponent = (function () {
     function EdicionOddComponent(oddService, modalService) {
+        var _this = this;
         this.oddService = oddService;
         this.modalService = modalService;
         this.titulo = 'Editar Datos de un Objeto de Deseo';
         this.oddSeleccionado = new odd_1.ODD();
-        this.listadoOdd = oddService.getODDs();
+        oddService
+            .getODDs()
+            .subscribe(function (data) { return _this.listadoOdd = data; }, function (error) { return console.log(error); }, function () { return console.log("getODDs() complete from constructor"); });
+        ;
     }
     EdicionOddComponent.prototype.mostraroddSeleccionado = function (oddSeleccionado, content) {
         this.oddSeleccionado = oddSeleccionado;
